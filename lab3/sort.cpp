@@ -28,14 +28,28 @@ void printArray(int arr[], int n)
     cout << endl;
 }
 
+void worstcase(int arr[],int n){
+    for(int i=0;i<n;i++){
+        arr[i]=n-i;
+    }
+}
+
 // Driver method
 int main()
 {
     int arr[] = { 12, 11, 13, 5, 6 };
+    int x;
+    cin >> x;
+    int b[x]={};
     int n = sizeof(arr) / sizeof(arr[0]);
+   
+    worstcase(b,x);
 
-    insertionSort(arr, n);
-    printArray(arr, n);
+   
+    printArray(b, x);
+    insertionSort(b, x);
+    printArray(b, x);
+
 
     return 0;
 }
