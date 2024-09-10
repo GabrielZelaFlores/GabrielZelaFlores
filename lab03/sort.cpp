@@ -1,17 +1,18 @@
-// C++ program for implementation of Insertion Sort
 #include <iostream>
+#include <chrono>  // Librería para medir el tiempo
 using namespace std;
+using namespace std::chrono;
 
-/* Function to sort array using insertion sort */
+/* Función para ordenar un array usando ordenamiento por inserción */
 void insertionSort(int arr[], int n)
 {
     for (int i = 1; i < n; ++i) {
         int key = arr[i];
         int j = i - 1;
 
-        /* Move elements of arr[0..i-1], that are
-           greater than key, to one position ahead
-           of their current position */
+        /* Mueve los elementos de arr[0..i-1] que son
+           mayores que la clave, a una posición adelante
+           de su posición actual */
         while (j >= 0 && arr[j] > key) {
             arr[j + 1] = arr[j];
             j = j - 1;
@@ -20,7 +21,7 @@ void insertionSort(int arr[], int n)
     }
 }
 
-/* A utility function to print array of size n */
+/* Función para imprimir un array de tamaño n */
 void printArray(int arr[], int n)
 {
     for (int i = 0; i < n; ++i)
@@ -28,30 +29,43 @@ void printArray(int arr[], int n)
     cout << endl;
 }
 
-void worstcase(int arr[],int n){
-    for(int i=0;i<n;i++){
-        arr[i]=n-i;
+void worstcase(int arr[], int n) {
+    for (int i = 0; i < n; i++) {
+        arr[i] = n - i;  // Llena el array en orden descendente para el peor caso
     }
 }
 
-// Driver method
+// Función principal
 int main()
 {
-    int arr[] = { 12, 11, 13, 5, 6 };
     int x;
+    cout << "Ingrese el tamaño del array: ";
     cin >> x;
-    int b[x]={};
-    int n = sizeof(arr) / sizeof(arr[0]);
-   
-    worstcase(b,x);
+    
+    int arr[x];
+    worstcase(arr, x);
 
-   
-    printArray(b, x);
-    insertionSort(b, x);
-    printArray(b, x);
+    cout << "Array antes de ordenar: ";
+    printArray(arr, x);
 
+    // Inicia la medición del tiempo
+    auto start = high_resolution_clock::now();
+
+    // Llama a la función de ordenamiento por inserción
+    insertionSort(arr, x);
+
+    // Detiene la medición del tiempo
+    auto stop = high_resolution_clock::now();
+
+    // Calcula la duración
+    auto duration = duration_cast<microseconds>(stop - start);
+
+    cout << "Array después de ordenar: ";
+    printArray(arr, x);
+
+    // Muestra el tiempo que tomó el ordenamiento por inserción
+    cout << "Tiempo tomado por el ordenamiento por inserción: " << duration.count() << " microsegundos" << endl;
 
     return 0;
 }
 
-/* This code is contributed by Hritik Shah. */
