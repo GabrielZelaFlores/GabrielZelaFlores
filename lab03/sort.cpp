@@ -1,6 +1,8 @@
 #include <iostream>
 #include <vector>
 #include <chrono>
+#include <cstdlib> // Para rand() y srand()
+#include <ctime>   // Para time()
 using namespace std;
 
 // Función de partición
@@ -34,22 +36,24 @@ void quickSort(vector<int>& arr, int low, int high) {
     }
 }
 
-// Función para generar el peor caso para QuickSort (arreglo descendente)
-void worstcase(vector<int>& arr, int n) {
+// Función para generar un caso promedio (arreglo con números aleatorios)
+void generateRandomCase(vector<int>& arr, int n) {
     for (int i = 0; i < n; i++) {
-        arr[i] = n - i;
+        arr[i] = rand() % 1000; // Genera números aleatorios entre 0 y 999
     }
 }
 
 int main() {
+    srand(time(0));  // Inicializa la semilla para la generación de números aleatorios
+
     int x;
     cin >> x;
 
     for (int i = 1; i <= x; i++) {
         vector<int> arr(i);
 
-        // Generar el peor caso
-        worstcase(arr, i);
+        // Generar el caso promedio
+        generateRandomCase(arr, i);
 
         // Medir el tiempo de ejecución de QuickSort
         auto inicio = chrono::high_resolution_clock::now();
