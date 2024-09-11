@@ -1,53 +1,64 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <chrono>
 using namespace std;
 
+// Función de partición
 int partition(vector<int>& arr, int low, int high) {
-  
-    // Choose the pivot
+
+    // Elige el pivote
     int pivot = arr[high];
-  
-    // Index of smaller element and indicates 
-    // the right position of pivot found so far
+
+    // Índice del elemento más pequeño encontrado hasta ahora
     int i = low - 1;
 
-    // Traverse arr[;ow..high] and move all smaller
-    // elements on left side. Elements from low to 
-    // i are smaller after every iteration
+    // Recorre los elementos desde low hasta high-1
     for (int j = low; j <= high - 1; j++) {
         if (arr[j] < pivot) {
             i++;
-            swap(arr[i], arr[j]);
+            swap(arr[i], arr[j]);  // Intercambia los elementos
         }
     }
-    
-    // Move pivot after smaller elements and
-    // return its position
-    swap(arr[i + 1], arr[high]);  
-    return i + 1;
+
+    // Coloca el pivote en su posición correcta
+    swap(arr[i + 1], arr[high]);
+    return i + 1;  // Retorna la posición del pivote
 }
 
-// The QuickSort function implementation
+// Implementación de la función QuickSort
 void quickSort(vector<int>& arr, int low, int high) {
-  
     if (low < high) {
-      
-        // pi is the partition return index of pivot
         int pi = partition(arr, low, high);
+        quickSort(arr, low, pi - 1);  // Partición izquierda
+        quickSort(arr, pi + 1, high); // Partición derecha
+    }
+}
 
-        // Recursion calls for smaller elements
-        // and greater or equals elements
-        quickSort(arr, low, pi - 1);
-        quickSort(arr, pi + 1, high);
+// Función para generar el peor caso para QuickSort (arreglo descendente)
+void worstcase(vector<int>& arr, int n) {
+    for (int i = 0; i < n; i++) {
+        arr[i] = n - i;
     }
 }
 
 int main() {
-    vector<int> arr = {10, 7, 8, 9, 1, 5};
-    int n = arr.size();
-    quickSort(arr, 0, n - 1);
-    cout << "Sorted Array\n";
-    for (int i = 0; i < n; i++) {
-        cout << arr[i] << " ";
+    int x;
+    cin >> x;
+
+    for (int i = 1; i <= x; i++) {
+        vector<int> arr(i);
+
+        // Generar el peor caso
+        worstcase(arr, i);
+
+        // Medir el tiempo de ejecución de QuickSort
+        auto inicio = chrono::high_resolution_clock::now();
+        quickSort(arr, 0, i - 1);
+        auto fin = chrono::high_resolution_clock::now();
+        auto duracion = chrono::duration_cast<chrono::nanoseconds>(fin - inicio);
+
+        cout << duracion.count() << endl;
     }
+
     return 0;
 }
