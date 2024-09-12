@@ -1,6 +1,8 @@
 // C++ program for implementation of Insertion Sort
 #include <iostream>
 #include <chrono>
+#include <cstdlib> // Para rand() y srand()
+#include <ctime>   // Para time()
 using namespace std;
 
 
@@ -22,6 +24,7 @@ void insertionSort(int arr[], int n)
     }
 }
 
+<<<<<<< HEAD
 /* A utility function to print array of size n */
 void printArray(int arr[], int n)
 {
@@ -39,6 +42,18 @@ void worstcase(int arr[],int n){
 // Driver method
 int main()
 {
+=======
+// Función para generar un caso promedio (arreglo con números aleatorios)
+void generateRandomCase(vector<int>& arr, int n) {
+    for (int i = 0; i < n; i++) {
+        arr[i] = rand() % 1000; // Genera números aleatorios entre 0 y 999
+    }
+}
+
+int main() {
+    srand(time(0));  // Inicializa la semilla para la generación de números aleatorios
+
+>>>>>>> eb6626ee17ca7bff687c85873b3c05239bb9fabd
     int x;
     cin >> x;
     for (int i=1;i<=x;i++){
@@ -51,8 +66,24 @@ int main()
     auto fin = chrono::high_resolution_clock::now();
     auto duracion = chrono::duration_cast<chrono::nanoseconds>(fin - inicio);
 
+<<<<<<< HEAD
     cout << duracion.count() << endl;
    
+=======
+    for (int i = 1; i <= x; i++) {
+        vector<int> arr(i);
+
+        // Generar el caso promedio
+        generateRandomCase(arr, i);
+
+        // Medir el tiempo de ejecución de QuickSort
+        auto inicio = chrono::high_resolution_clock::now();
+        quickSort(arr, 0, i - 1);
+        auto fin = chrono::high_resolution_clock::now();
+        auto duracion = chrono::duration_cast<chrono::nanoseconds>(fin - inicio);
+
+        cout << duracion.count() << endl;
+>>>>>>> eb6626ee17ca7bff687c85873b3c05239bb9fabd
     }
 
     return 0;
