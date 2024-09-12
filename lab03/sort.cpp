@@ -1,47 +1,57 @@
-// C++ program for implementation of Insertion Sort (Best Case)
 #include <iostream>
+#include <vector>
 #include <chrono>
 using namespace std;
 
-/* Function to sort array using insertion sort */
-void insertionSort(int arr[], int n)
-{
-    for (int i = 1; i < n; ++i) {
-        int key = arr[i];
-        int j = i - 1;
-
-        while (j >= 0 && arr[j] > key) {
-            arr[j + 1] = arr[j];
-            j = j - 1;
+// Función de partición
+int partition(vector<int>& arr, int low, int high) {
+    int pivot = arr[high];
+    int i = low - 1;
+    for (int j = low; j <= high - 1; j++) {
+        if (arr[j] < pivot) {
+            i++;
+            swap(arr[i], arr[j]);
         }
-        arr[j + 1] = key;
+    }
+    swap(arr[i + 1], arr[high]);
+    return i + 1;
+}
+
+// Implementación de la función QuickSort
+void quickSort(vector<int>& arr, int low, int high) {
+    if (low < high) {
+        int pi = partition(arr, low, high);
+        quickSort(arr, low, pi - 1);
+        quickSort(arr, pi + 1, high);
     }
 }
 
-/* Function to generate best case for insertion sort (sorted array) */
-void bestCase(int arr[], int n) {
+// Función para generar el mejor caso para QuickSort (arreglo ya ordenado)
+void bestcase(vector<int>& arr, int n) {
     for (int i = 0; i < n; i++) {
-        arr[i] = i + 1;  // Already sorted array
+        arr[i] = i + 1;  // Arreglo ya ordenado
     }
 }
 
-// Driver method
-int main()
-{
+int main() {
     int x;
     cin >> x;
-    
-    for (int i = 1; i <= x; i++) {
-        int b[i] = {};
 
-        // Generate best case
-        bestCase(b, i);
-        auto startBest = chrono::high_resolution_clock::now();
-        insertionSort(b, i);
-        auto endBest = chrono::high_resolution_clock::now();
-        auto durationBest = chrono::duration_cast<chrono::nanoseconds>(endBest - startBest);
-        cout << "Best case duration (ns) for n = " << i << ": " << durationBest.count() << endl;
+    for (int i = 1; i <= x; i++) {
+        vector<int> arr(i);
+
+        // Generar el mejor caso
+        bestcase(arr, i);
+
+        // Medir el tiempo de ejecución de QuickSort
+        auto inicio = chrono::high_resolution_clock::now();
+        quickSort(arr, 0, i - 1);
+        auto fin = chrono::high_resolution_clock::now();
+        auto duracion = chrono::duration_cast<chrono::nanoseconds>(fin - inicio);
+
+        cout << duracion.count() << endl;
     }
 
     return 0;
 }
+
