@@ -1,6 +1,6 @@
 # Informe - Método del Trapecio Paralelo
 
-| Nro. | Commits | Code | Name | % Participación |
+| Nro. | Commits | Code | Name |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
 | 1  | Ejercicio del trapecio Secuencial.  | 61501b4  | GabrielZelaFlores  |
 | 2  | Ejercicio del Trapecio de forma Secuencial para funciones cuadraticas en c++.  | 9a02763 | JuanHuamaniVasquez  |
