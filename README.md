@@ -281,6 +281,7 @@ La siguiente tabla muestra una representación de los trapecios calculados en ca
 ```
 ## Visualizacion de la funcion
 ![Gráfico de la función](../lab04/img/resultado.png)
+![resultado](https://github.com/user-attachments/assets/b993bf9b-37af-462a-9615-ed0f23e48e19)
 
 ## 7. Consideraciones Finales
 
