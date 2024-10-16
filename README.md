@@ -295,8 +295,45 @@ La siguiente tabla muestra una representación de los trapecios calculados en ca
 ![comparativa](https://github.com/user-attachments/assets/b3d46b9a-5e6b-44c6-b2b0-df08fb1121b8)
 
 
-## 7. Consideraciones Finales
+# Análisis de Rendimiento del Algoritmo
 
-1. **Código unificado**: Todo el desarrollo se ha trabajado en un solo archivo con commits, documentando cada hito.
-2. **Eficiencia**: El uso de paralelismo ha permitido una mejora notable en la ejecución cuando se incrementan los trapecios.
-3. **Visualización**: La inclusión de gráficos en la última versión ofrece una mejor comprensión del proceso de integración aproximada.
+La gráfica presentada muestra la comparación entre los tiempos de ejecución de dos métodos de cálculo de un algoritmo: uno en paralelo y otro secuencial. Los ejes representan la cantidad de operaciones o iteraciones realizadas y el tiempo transcurrido en milisegundos.
+
+## Análisis Detallado
+
+### 1. Rendimiento del Algoritmo
+
+- **Observación**: El método paralelo (representado en púrpura) muestra un rendimiento superior en comparación con el método secuencial (en verde) a medida que aumentan las operaciones.
+  
+- **Razón**:
+  - **Paralelización**: El método paralelo divide el trabajo en sub-tareas que se pueden ejecutar simultáneamente en múltiples núcleos de la CPU. Esto reduce el tiempo total de ejecución, ya que las operaciones se llevan a cabo en paralelo en lugar de en serie.
+  - **Menor Tiempo de Espera**: En el enfoque secuencial, cada operación debe completarse antes de pasar a la siguiente. Esto genera un tiempo de espera acumulado que no se presenta en la ejecución paralela, donde varias tareas pueden ejecutarse al mismo tiempo.
+  - **Carga de Trabajo**: Cuando se manejan grandes volúmenes de datos, la eficiencia del método paralelo se incrementa considerablemente, aprovechando al máximo la capacidad de procesamiento disponible.
+
+### 2. Estabilidad
+
+- **Observación**: El método paralelo muestra una mayor estabilidad en sus tiempos de ejecución, con menos fluctuaciones y picos en comparación con el secuencial.
+  
+- **Razón**:
+  - **Distribución de la Carga**: En un sistema paralelo, las tareas se distribuyen uniformemente entre varios núcleos, lo que permite una utilización más eficiente de los recursos y reduce la posibilidad de cuellos de botella. Esto es especialmente importante en situaciones donde ciertas tareas pueden tardar más que otras.
+  - **Manejo de Errores**: Los métodos paralelos pueden implementar estrategias de recuperación y reintento para tareas que fallan o se ralentizan, lo que ayuda a mantener la estabilidad del rendimiento.
+  - **Aislamiento de Tareas**: Las tareas en un entorno paralelo son más independientes, lo que significa que una tarea lenta o fallida no afecta a las demás. En contraste, en un método secuencial, una operación lenta puede ralentizar todo el proceso.
+
+### 3. Diferencia en el Número de Trapecios
+
+- **Observación**: Es normal que el método de trapecio paralelo genere menos trapecios que el secuencial en ciertas condiciones.
+  
+- **Razón**:
+  - **Optimización de Recursos**: El método paralelo puede optimizar el uso de recursos al no requerir el mismo número de particiones para alcanzar un nivel de precisión similar. Esto se traduce en menos trapecios generados, ya que cada trapecio puede abarcar una mayor sección del área bajo la curva, lo que reduce la cantidad total necesaria para lograr el mismo resultado.
+  - **Ajustes de Precisión**: Dependiendo de cómo se configure el algoritmo, el método paralelo puede estar diseñado para alcanzar una precisión aceptable con menos divisiones en el rango, a diferencia del secuencial, que podría requerir más subdivisiones para obtener resultados precisos. Esto se traduce en una menor carga computacional en el método paralelo, lo que mejora su rendimiento en situaciones específicas.
+
+## Implicaciones
+
+- **Escalabilidad**: El rendimiento superior del método paralelo sugiere que es más escalable, lo que significa que a medida que se agregan más núcleos o se utilizan arquitecturas de computación más avanzadas, se puede esperar una mejora significativa en el tiempo de ejecución.
+  
+- **Confiabilidad en Producción**: La estabilidad del método paralelo lo hace más adecuado para aplicaciones en entornos de producción donde los recursos deben ser utilizados de manera eficiente y donde las interrupciones en el servicio deben ser minimizadas.
+
+## Conclusión
+
+En conclusión, el análisis muestra que el método de trapecio paralelo no solo mejora el rendimiento en comparación con el método secuencial, sino que también ofrece una mayor estabilidad en los tiempos de ejecución. Además, la posibilidad de generar menos trapecios en el método paralelo es un fenómeno normal y esperado, dado que este enfoque puede optimizar el uso de recursos y ajustar la precisión de manera más efectiva. Estos hallazgos resaltan la importancia de considerar las características y ventajas de los métodos paralelos en aplicaciones donde se requieren cálculos rápidos y confiables.
+
