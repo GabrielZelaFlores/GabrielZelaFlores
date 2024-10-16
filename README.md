@@ -280,8 +280,19 @@ La siguiente tabla muestra una representación de los trapecios calculados en ca
 3942.926,5188.259,3565.741,4754.185,5874.926,2394.926,2246.630,3207.519,3384.259,7643.074,2868.259,6356.407,5412.407,4968.852,4544.259,5641.296,2547.963,3751.963,6113.296,2705.741,3035.519,6856.852,4339.074,4138.630,7114.185,6604.259,7914.630,7376.259,8190.926,8471.963,151155.200
 ```
 ## Visualizacion de la funcion
-![Gráfico de la función](../lab04/img/resultado.png)
 ![resultado](https://github.com/user-attachments/assets/b993bf9b-37af-462a-9615-ed0f23e48e19)
+
+## SECUENCIAL-TRAPECIO
+
+![tiempoSecuencial](https://github.com/user-attachments/assets/565e96aa-af96-4ec0-a2be-f6f79bf9b404)
+
+## PARALELO-TRAPECIO
+
+![tiempoParalelo](https://github.com/user-attachments/assets/04af02c9-3aaa-477a-a14b-625e99a4e4c2)
+
+## COMPARACION SECUENCIAL/PARALELO-TRAPECIO
+![comparativa](https://github.com/user-attachments/assets/b3d46b9a-5e6b-44c6-b2b0-df08fb1121b8)
+
 
 ## 7. Consideraciones Finales
 
