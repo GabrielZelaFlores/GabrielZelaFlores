@@ -133,27 +133,18 @@ A lo largo del proyecto se han realizado 6 versiones del código con mejoras gra
 5. **Versión 1.4**: Manejo de excepciones para una ejecución más robusta.
 6. **Versión 1.5**: Adición de gráficos para visualizar el proceso de integración.
 
-## 6. Ejecuciones
+## 6. Ejecución
 
-- **Ejecución 1** (Commit ID: `a1b2c3d`):
-  - Entrada: f(x) = x^2 + 2x + 1, [1, 2]
-  - Resultado: Área = 4.5
-  - Captura:
-  
-    ![Ejecución 1](img/ejecucion_1.png)
+### Ejecución :
+**Versión 6 (Commit ID: `<commit_id_v6>`)**
 
-- **Ejecución 2** (Commit ID: `d4e5f6g`):
-  - Entrada: f(x) = x^2 + 2x + 1, [1, 2], precisión 4 decimales.
-  - Resultado: Área = 4.5000
-  - Captura:
-
-    ![Ejecución 2](img/ejecucion_2.png)
-
-- **Ejecución 3** (Commit ID: `h7i8j9k`):
-  - Entrada: f(x) = x^2 + 2x + 1, [1, 2], paralelización activada.
-  - Resultado: Área = 4.5000 (tiempo optimizado)
-  - Captura:
-
+- Función: `exp(x)`
+- Límite inferior: `0`
+- Límite superior: `2`
+- Decimales: `4`
+- Área final calculada: `6.3960`
+- Trapecios: `18`
+- Tiempo de ejecución: `350 ms`
     ![Ejecución 3](img/ejecucion_3.png)
 
 ## 7. Consideraciones Finales
@@ -161,6 +152,3 @@ A lo largo del proyecto se han realizado 6 versiones del código con mejoras gra
 1. **Código unificado**: Todo el desarrollo se ha trabajado en un solo archivo con commits, documentando cada hito.
 2. **Eficiencia**: El uso de paralelismo ha permitido una mejora notable en la ejecución cuando se incrementan los trapecios.
 3. **Visualización**: La inclusión de gráficos en la última versión ofrece una mejor comprensión del proceso de integración aproximada.
-```
-
-Este es el archivo `README.md` extendido con seis versiones y más detalles en cada una. ¿Te gustaría hacer algún ajuste o agregar algo más?
