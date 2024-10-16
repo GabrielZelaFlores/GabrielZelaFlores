@@ -1,13 +1,13 @@
 # Informe - Método del Trapecio Paralelo
 
-| Nro. | Commits | Code | Name |
+| Nro. | Commits | Code | User | Name |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
-| 1  | Ejercicio del trapecio Secuencial.  | 61501b4  | GabrielZelaFlores  |
-| 2  | Ejercicio del Trapecio de forma Secuencial para funciones cuadraticas en c++.  | 9a02763 | JuanHuamaniVasquez  |
-| 3  | Ejercicio de Trapecio de forma Secuencial en Python.  | f70a0db | SebastianCastro-ULS  |
-| 4  | Código de prueba para el algoritmo de solución de un integral mediante método del trapecio.  | 5f147fe | B3NJ1RO |
-| 5  | Agregando funciones al código para generar graficos.  | 265b390 | LenzG-alt |
-| 6  | Agregando funcion al codigo para funciones infinitas.  | a6e6e07 | Vsrn12 |
+| 1  | Ejercicio del trapecio Secuencial.  | 61501b4  | GabrielZelaFlores  | Zela Flores Gabriel |
+| 2  | Ejercicio del Trapecio de forma Secuencial para funciones cuadraticas en c++.  | 9a02763 | JuanHuamaniVasquez  | Huamani Vasquez Juan Jose |
+| 3  | Ejercicio de Trapecio de forma Secuencial en Python.  | f70a0db | SebastianCastro-ULS  | Castro Mamani Sebastian |
+| 4  | Código de prueba para el algoritmo de solución de un integral mediante método del trapecio.  | 5f147fe | B3NJ1RO | Romero Ramirez Joel |
+| 5  | Agregando funciones al código para generar graficos.  | 265b390 | LenzG-alt | Arapa Chua Davis |
+| 6  | Agregando funcion al codigo para funciones infinitas.  | a6e6e07 | Vsrn12 | Delgado Chipana Piero Adrian |
 
 ## 1. Integrantes y Participación
 - Castro Mamani Sebastian - [ 100% ]
