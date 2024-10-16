@@ -145,7 +145,51 @@ A lo largo del proyecto se han realizado 6 versiones del código con mejoras gra
 - Área final calculada: `6.3960`
 - Trapecios: `18`
 - Tiempo de ejecución: `350 ms`
-    ![Ejecución 3](img/ejecucion_3.png)
+
+## Salida del programa:
+
+```
+8.3891
+6.9128
+6.6240
+6.5217
+6.4740
+6.4481
+6.4325
+6.4223
+6.4153
+6.4103
+6.4066
+6.4037
+6.4016
+6.4000
+6.3990
+6.3980
+6.3960
+6.3960
+```
+### Lista de tiempos por iteración (en milisegundos)
+El siguiente es el tiempo de ejecución de cada iteración del cálculo:
+```
+5.973697989247739
+6.123690051026642
+7.588446955196559
+9.807653026655316
+11.804251000285149
+18.136049970053136
+18.340024980716407
+21.547239972278476
+23.296485072933137
+24.472006014548242
+31.818886986002326
+31.97998891118914
+34.14089803118259
+40.0903649860993
+37.99926093779504
+47.35278501175344
+43.82536292541772
+56.47902505006641
+```
 
 ## 7. Consideraciones Finales
 
