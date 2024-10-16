@@ -1,4 +1,5 @@
 # Informe - Método del Trapecio Paralelo
+![531bf23f-8dd1-494b-9809-2626fe7461a7](https://github.com/user-attachments/assets/f3d37a4c-3b4e-440a-b115-35dbff221887)
 
 | Nro. | Commits | Code | User | Name |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
