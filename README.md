@@ -136,18 +136,12 @@ A lo largo del proyecto se han realizado 6 versiones del código con mejoras gra
 ## 6. Ejecución
 
 ### Ejecución :
-
-- Función: `exp(x)`
-- Límite inferior: `0`
-- Límite superior: `2`
-- Decimales: `4`
-- Área final calculada: `6.3960`
-- Trapecios: `18`
-- Tiempo de ejecución: `350 ms`
-
-## Salida del programa:
-
 ```
+Introduce una función matemática en términos de x (por ejemplo, x**2 + 2*x + 1): exp(x)
+Ingrese los límites de la función.
+Límite inferior = 0
+Límite superior = 2
+¿Cuántos decimales deseas utilizar para la precisión? 4
 8.3891
 6.9128
 6.6240
@@ -166,7 +160,13 @@ A lo largo del proyecto se han realizado 6 versiones del código con mejoras gra
 6.3980
 6.3960
 6.3960
+Área final de la función = 6.3960
+Trapecios = 18
+Datos guardados en listaTrapeciosMayores.csv
+Datos guardados en listaTiempoPorIteracion.csv
+Datos guardados en listaTiempoPorTrapecioN.csv
 ```
+
 ## Lista de tiempos por iteración (en milisegundos)
 El siguiente es el tiempo de ejecución de cada iteración del cálculo:
 ```
@@ -256,6 +256,9 @@ La siguiente tabla muestra una representación de los trapecios calculados en ca
 0.2532,0.5129,0.4053,0.2251,0.3204,0.2848,0.1581,0.1406,0.1250,0.3603,0.1779,0.2001,0.5769,0.6489,0.7299,0.8211,0.4559,6.3960
 0.2050,0.1642,0.1835,0.3574,0.1315,0.2291,0.3198,0.2862,0.1176,0.1469,0.2561,0.4463,0.4987,0.3994,0.5573,0.6228,0.7778,0.6960,6.3960
 ```
+## Visualizacion de la funcion
+![Gráfico de la función](../lab04/img/resultado.png)
+
 ## 7. Consideraciones Finales
 
 1. **Código unificado**: Todo el desarrollo se ha trabajado en un solo archivo con commits, documentando cada hito.
