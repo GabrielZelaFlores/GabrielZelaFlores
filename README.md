@@ -34,7 +34,7 @@ Este proyecto se centra en la implementación del Método del Trapecio Paralelo 
 
 ## 4. Códigos con Versiones Menores
 
-### Versión 1.0 (Commit ID: `a1b2c3d`)
+### Versión 1.0 (Commit ID: `GabrielZelaFlores`)
 Implementación inicial del método secuencial para calcular el área de un trapecio. Se incluye la función `xvalue` para evaluar una función matemática en un valor dado de `x`, y la función `trap` para calcular el área de un trapecio basado en las bases mayor y menor.
 
 ```python
@@ -57,7 +57,7 @@ area_trapecio = trap(base_mayor, base_menor, x2 - x1)
 print(f"Área del trapecio: {area_trapecio}")
 ```
 
-### Versión 1.1 (Commit ID: `d4e5f6g`)
+### Versión 1.1 (Commit ID: `B3NJ1RO`)
 En esta versión se introduce el uso de precisión personalizada. Se añade la capacidad de que el usuario elija el número de decimales en los resultados, lo cual es útil para cálculos más detallados. También se agrega una función para guardar los resultados en un archivo de texto.
 
 ```python
@@ -68,7 +68,7 @@ def guardarVector(vector, nombre_archivo="datos_trapecios.txt"):
     print(f"Datos guardados en {nombre_archivo}")
 ```
 
-### Versión 1.2 (Commit ID: `h7i8j9k`)
+### Versión 1.2 (Commit ID: `SebastianCastro-ULS`)
 Introducción del paralelismo en el cálculo de áreas de los trapecios. Ahora, en lugar de calcular cada trapecio de forma secuencial, se utiliza la librería `concurrent.futures` para realizar estos cálculos en paralelo, mejorando significativamente el rendimiento cuando se aumenta el número de trapecios.
 
 ```python
@@ -88,7 +88,7 @@ def main():
             area += future.result()
 ```
 
-### Versión 1.3 (Commit ID: `l0m1n2o`)
+### Versión 1.3 (Commit ID: `Vsrn12`)
 Se añade la funcionalidad de guardar los resultados en dos formatos distintos: uno con solo los valores de las áreas de los trapecios, y otro que incluye tanto los valores de los trapecios como los tiempos de ejecución en un archivo CSV. Esta versión mejora la documentación de los resultados, lo que facilita el análisis posterior.
 
 ```python
@@ -99,7 +99,7 @@ def guardar2Vector(vector1, vector2, nombre_archivo="datos_trapecios_tiempo.csv"
     print(f"Datos guardados en {nombre_archivo}")
 ```
 
-### Versión 1.4 (Commit ID: `p3q4r5s`)
+### Versión 1.4 (Commit ID: `LenzG-alt`)
 Optimización del uso de memoria y mejora de la legibilidad del código mediante la implementación de un manejo adecuado de excepciones. Ahora, si ocurre un error durante el cálculo o almacenamiento, el programa lo maneja adecuadamente sin interrumpir la ejecución completa.
 
 ```python
@@ -112,7 +112,7 @@ def calcular_trapecio(funcion_input, x1temp, divtemporal, decimales):
         return 0
 ```
 
-### Versión 1.5 (Commit ID: `t6u7v8w`)
+### Versión 1.5 (Commit ID: `JuanHuamaniVasquez`)
 En esta última versión, se añade la función de graficar los resultados obtenidos mediante la función `graficar_funcion`. El gráfico muestra la curva de la función ingresada junto con las áreas de los trapecios calculados, lo que permite visualizar claramente el proceso de integración aproximada.
 
 ```python
@@ -136,7 +136,6 @@ A lo largo del proyecto se han realizado 6 versiones del código con mejoras gra
 ## 6. Ejecución
 
 ### Ejecución :
-**Versión 6 (Commit ID: `<commit_id_v6>`)**
 
 - Función: `exp(x)`
 - Límite inferior: `0`
