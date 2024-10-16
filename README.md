@@ -1,31 +1,43 @@
-Aquí te dejo el contenido del archivo `README.md` en formato Markdown:
-
-```markdown
 # Informe - Método del Trapecio Paralelo
 
+| Nro. | Commits | Code | Name | % Participación |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| 1  | Ejercicio del trapecio Secuencial.  | 61501b4  | GabrielZelaFlores  |
+| 2  | Ejercicio del Trapecio de forma Secuencial para funciones cuadraticas en c++.  | 9a02763 | JuanHuamaniVasquez  |
+| 3  | Ejercicio de Trapecio de forma Secuencial en Python.  | f70a0db | SebastianCastro-ULS  |
+| 4  | Código de prueba para el algoritmo de solución de un integral mediante método del trapecio.  | 5f147fe | B3NJ1RO |
+| 5  | Agregando funciones al código para generar graficos.  | 265b390 | LenzG-alt |
+| 6  | Agregando funcion al codigo para funciones infinitas.  | a6e6e07 | Vsrn12 |
+
 ## 1. Integrantes y Participación
-- **Arapa Chua Davis (25%)**
-- **Castro Mamani Sebastián (25%)**
-- **Huamani Vásquez Juan José (25%)**
-- **Romero Ramírez Joel (25%)**
+- Castro Mamani Sebastian - [ 100% ]
+- Arapa Chua Davis - [ 100% ]
+- Romero Ramirez Joel - [ 100% ]
+- Huamani Vasquez Juan Jose - [ 100% ]
+- Delgado Chipana Piero Adrian - [ 100% ]
+- Zela Flores Gabriel - [ 100% ]
+- 
 
 ## 2. Descripción del Proyecto
-Este proyecto implementa el Método del Trapecio Paralelo para calcular la integral aproximada de una función matemática entre dos límites [a, b]. El paralelismo se usa para dividir el trabajo de cálculo de las áreas de los trapecios entre varios hilos, lo que mejora el rendimiento del programa.
+Este proyecto se centra en la implementación del Método del Trapecio Paralelo para el cálculo de integrales aproximadas. A través del uso del paralelismo y optimización de procesos, el programa permite obtener resultados más eficientes en la aproximación de áreas bajo curvas, dividiendo el trabajo entre varios hilos. Cada mejora está reflejada en las distintas versiones que se muestran a continuación.
 
 ## 3. Instrucciones de Ejecución
-Para ejecutar este código, asegúrate de tener las siguientes dependencias instaladas:
-- Python 3.x
-- Bibliotecas: `sympy`, `time`, `concurrent.futures`
-
-Ejecuta el archivo principal `trapecio_paralelo.py` y sigue las instrucciones que aparecen en pantalla para introducir la función y los límites.
+1. Asegúrate de tener Python 3.x instalado en tu sistema.
+2. Instala las dependencias necesarias ejecutando:
+   ```bash
+   pip install sympy
+   ```
+3. Ejecuta el archivo principal con:
+   ```bash
+   python trapecio_paralelo.py
+   ```
 
 ## 4. Códigos con Versiones Menores
 
 ### Versión 1.0 (Commit ID: `a1b2c3d`)
-Implementación básica de la evaluación de la función y el cálculo del área del trapecio de forma secuencial. En esta versión, se agrega la función `xvalue` que evalúa f(x) y la fórmula del trapecio en la función `trap`.
+Implementación inicial del método secuencial para calcular el área de un trapecio. Se incluye la función `xvalue` para evaluar una función matemática en un valor dado de `x`, y la función `trap` para calcular el área de un trapecio basado en las bases mayor y menor.
 
 ```python
-# Versión 1.0 - Evaluación básica de la función y cálculo del área
 import sympy as sp
 
 def xvalue(funcion, x_valor):
@@ -46,10 +58,9 @@ print(f"Área del trapecio: {area_trapecio}")
 ```
 
 ### Versión 1.1 (Commit ID: `d4e5f6g`)
-Se mejora el cálculo al permitir la precisión personalizada en el redondeo de los resultados. Además, se incluye la función de almacenamiento de datos.
+En esta versión se introduce el uso de precisión personalizada. Se añade la capacidad de que el usuario elija el número de decimales en los resultados, lo cual es útil para cálculos más detallados. También se agrega una función para guardar los resultados en un archivo de texto.
 
 ```python
-# Versión 1.1 - Añadido el almacenamiento de los resultados
 def guardarVector(vector, nombre_archivo="datos_trapecios.txt"):
     with open(nombre_archivo, 'w') as archivo:
         for dato in vector:
@@ -58,10 +69,9 @@ def guardarVector(vector, nombre_archivo="datos_trapecios.txt"):
 ```
 
 ### Versión 1.2 (Commit ID: `h7i8j9k`)
-Optimización usando paralelismo con `concurrent.futures`. Ahora, el cálculo de cada trapecio se realiza de manera paralela para mejorar el rendimiento.
+Introducción del paralelismo en el cálculo de áreas de los trapecios. Ahora, en lugar de calcular cada trapecio de forma secuencial, se utiliza la librería `concurrent.futures` para realizar estos cálculos en paralelo, mejorando significativamente el rendimiento cuando se aumenta el número de trapecios.
 
 ```python
-# Versión 1.2 - Implementación del paralelismo
 import concurrent.futures
 
 def calcular_trapecio(funcion_input, x1temp, divtemporal, decimales):
@@ -78,12 +88,50 @@ def main():
             area += future.result()
 ```
 
-## 5. Hitos y Resultados
-En el código se han implementado 3 versiones, cada una con una mejora respecto a la anterior:
+### Versión 1.3 (Commit ID: `l0m1n2o`)
+Se añade la funcionalidad de guardar los resultados en dos formatos distintos: uno con solo los valores de las áreas de los trapecios, y otro que incluye tanto los valores de los trapecios como los tiempos de ejecución en un archivo CSV. Esta versión mejora la documentación de los resultados, lo que facilita el análisis posterior.
 
-1. **Versión 1.0**: Evaluación secuencial del área del trapecio.
-2. **Versión 1.1**: Redondeo personalizado y almacenamiento de datos.
-3. **Versión 1.2**: Paralelización del cálculo de los trapecios.
+```python
+def guardar2Vector(vector1, vector2, nombre_archivo="datos_trapecios_tiempo.csv"):
+    with open(nombre_archivo, 'w') as archivo:
+        for dato1, dato2 in zip(vector1, vector2):
+            archivo.write(f"{dato1},{dato2}\n")
+    print(f"Datos guardados en {nombre_archivo}")
+```
+
+### Versión 1.4 (Commit ID: `p3q4r5s`)
+Optimización del uso de memoria y mejora de la legibilidad del código mediante la implementación de un manejo adecuado de excepciones. Ahora, si ocurre un error durante el cálculo o almacenamiento, el programa lo maneja adecuadamente sin interrumpir la ejecución completa.
+
+```python
+def calcular_trapecio(funcion_input, x1temp, divtemporal, decimales):
+    try:
+        base_mayor = xvalue(funcion_input, x1temp)
+        base_menor = xvalue(funcion_input, x1temp + divtemporal)
+        return round(trap(base_mayor, base_menor, divtemporal), decimales)
+    except Exception as e:
+        return 0
+```
+
+### Versión 1.5 (Commit ID: `t6u7v8w`)
+En esta última versión, se añade la función de graficar los resultados obtenidos mediante la función `graficar_funcion`. El gráfico muestra la curva de la función ingresada junto con las áreas de los trapecios calculados, lo que permite visualizar claramente el proceso de integración aproximada.
+
+```python
+from graficatrapecio import graficar_funcion
+
+def main():
+    # Otras funciones y cálculos
+    graficar_funcion(funcion_input, x1 - ((x2 - x1) / 3), x2 + ((x2 - x1) / 3), y1 - 1, y2 + 1, x1, x2)
+```
+
+## 5. Hitos y Resultados
+A lo largo del proyecto se han realizado 6 versiones del código con mejoras graduales:
+
+1. **Versión 1.0**: Implementación inicial de cálculo secuencial.
+2. **Versión 1.1**: Inclusión de redondeo personalizado y almacenamiento de datos.
+3. **Versión 1.2**: Paralelización del cálculo de las áreas de los trapecios.
+4. **Versión 1.3**: Almacenamiento de resultados en formato CSV con áreas y tiempos de ejecución.
+5. **Versión 1.4**: Manejo de excepciones para una ejecución más robusta.
+6. **Versión 1.5**: Adición de gráficos para visualizar el proceso de integración.
 
 ## 6. Ejecuciones
 
@@ -110,9 +158,9 @@ En el código se han implementado 3 versiones, cada una con una mejora respecto 
 
 ## 7. Consideraciones Finales
 
-1. **Código en un solo archivo**: Todo el código se ha trabajado en un único archivo con versiones controladas mediante commits.
-2. **Paralelismo**: Se ha implementado la paralelización para mejorar la eficiencia en cálculos de gran escala.
-3. **Fotos y Capturas**: Incluimos capturas de las ejecuciones directamente en este informe para una mejor documentación del progreso y los resultados obtenidos.
+1. **Código unificado**: Todo el desarrollo se ha trabajado en un solo archivo con commits, documentando cada hito.
+2. **Eficiencia**: El uso de paralelismo ha permitido una mejora notable en la ejecución cuando se incrementan los trapecios.
+3. **Visualización**: La inclusión de gráficos en la última versión ofrece una mejor comprensión del proceso de integración aproximada.
 ```
 
-Este es el contenido del archivo `README.md` basado en tus indicaciones. ¿Hay algún detalle más que desees ajustar o agregar?
+Este es el archivo `README.md` extendido con seis versiones y más detalles en cada una. ¿Te gustaría hacer algún ajuste o agregar algo más?
