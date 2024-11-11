@@ -1,6 +1,3 @@
-Aquí tienes el código ajustado para que todos los recuadros tengan el mismo ancho y margen que el primer cuadro, logrando una apariencia simétrica y uniforme:
-
-```html
 <div align="center">
 <table border="1" style="border-collapse: collapse; width:80%; margin-top: 20px;">
     <theader>
@@ -93,7 +90,6 @@ Aquí tienes el código ajustado para que todos los recuadros tengan el mismo an
     [![Vim][Vim]][vim-site]  
     [![Java][Java]][java-site]
 </div>
-```
 
 Con esta estructura, todos los recuadros están ajustados a un ancho del 80% para mantener una alineación uniforme con el cuadro principal.
 # Informe - Método del Trapecio Paralelo
