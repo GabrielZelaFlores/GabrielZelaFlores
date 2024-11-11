@@ -2,58 +2,57 @@
 <table>
     <theader>
         <tr>
-            <td><img src="https://github.com/rescobedoq/pw2/blob/main/epis.png?raw=true" alt="EPIS" style="width:50%; height:auto"/></td>
-            <th>
-                <span style="font-weight:bold;">UNIVERSIDAD LA SALLE</span><br />
+            <td style="width:25%;"><img src="https://github.com/rescobedoq/pw2/blob/main/epis.png?raw=true" alt="EPIS" style="width:80%; height:auto"/></td>
+            <td>
+                <span style="font-weight:bold;">UNIVERSIDAD NACIONAL DE SAN AGUSTIN</span><br />
                 <span style="font-weight:bold;">FACULTAD DE INGENIERÍA DE PRODUCCIÓN Y SERVICIOS</span><br />
-                <span style="font-weight:bold;">ESCUELA PROFESIONAL DE INGENIERÍA DE SOFTWARE</span>
-            </th>
-            <td><img src="https://github.com/rescobedoq/pw2/blob/main/abet.png?raw=true" alt="ABET" style="width:50%; height:auto"/></td>
+                <span style="font-weight:bold;">DEPARTAMENTO ACADÉMICO DE INGENIERÍA DE SISTEMAS E INFORMÁTICA</span><br />
+                <span style="font-weight:bold;">ESCUELA PROFESIONAL DE INGENIERÍA DE SISTEMAS</span>
+            </td>            
         </tr>
     </theader>
     <tbody>
-        <tr><td colspan="3"><span style="font-weight:bold;">Formato</span>: Guía de Práctica de Laboratorio</td></tr>
-        <tr><td><span style="font-weight:bold;">Aprobación</span>:  2022/03/01</td><td><span style="font-weight:bold;">Código</span>: GUIA-PRLD-001</td><td><span style="font-weight:bold;">Página</span>: 1</td></tr>
+        <tr>
+        <td colspan="2"><span style="font-weight:bold;">Proyecto web</span>: Desarrollo de una aplicación web para inscripción de laboratorios</td>
+        </tr>
+        <tr>
+        <td colspan="2"><span style="font-weight:bold;">Fecha</span>:  2022/08/09</td>
+        </tr>
     </tbody>
 </table>
 </div>
 
 <div align="center">
-<span style="font-weight:bold;">GUÍA DE LABORATORIO</span><br />
+<span style="font-weight:bold;">PROYECTO WEB</span><br />
 </div>
 
 
 <table>
 <theader>
-<tr><th colspan="6">INFORMACIÓN BÁSICA</th></tr>
+<tr><th>INFORMACIÓN BÁSICA</th></tr>
 </theader>
 <tbody>
-<tr><td>ASIGNATURA:</td><td colspan="5">Programación Web 2</td></tr>
-<tr><td>TÍTULO DE LA PRÁCTICA:</td><td colspan="5">Vim - Git - GitHub</td></tr>
-<tr>
-<td>NÚMERO DE PRÁCTICA:</td><td>01</td><td>AÑO LECTIVO:</td><td>2023 A</td><td>NRO. SEMESTRE:</td><td>III</td>
-</tr>
-<tr>
-<td>FECHA INICIO::</td><td>01-May-2023</td><td>FECHA FIN:</td><td>07-May-2023</td><td>DURACIÓN:</td><td>04 horas</td>
-</tr>
-<tr><td colspan="6">RECURSOS:
-    <ul>
-        <li><a href="https://git-scm.com/book/es/v2">https://git-scm.com/book/es/v2</a></li>
-        <li><a href="https://guides.github.com/">https://guides.github.com/</a></li>        
-        <li><a href="https://www.w3schools.com/java/default.asp">https://www.w3schools.com/java/default.asp</a></li>
-    </ul>
-</td>
-</<tr>
-<tr><td colspan="6">DOCENTES:
-<ul>
-<li>Richart Smith Escobedo Quispe - rescobedoq@unsa.edu.pe</li>
-</ul>
-</td>
-</<tr>
+    <tr>
+        <td>ASIGNATURA:</td><td>Programación Web 2</td>
+    </tr>
+    <tr>
+        <td>SEMESTRE:</td><td>III</td>
+    </tr>
+    <tr>
+        <td>FECHA INICIO:</td><td>31-Jul-2023</td><td>FECHA FIN:</td>
+        <td>06-Ago-2023</td><td>DURACIÓN:</td><td>04 horas</td>
+    </tr>
+    <tr>
+        <td colspan="3">DOCENTES:
+        <ul>
+        <li>Richart Smith Escobedo Quispe - rescobedoq@unsa.edu.pe</li>
+        </ul>
+        </td>
+    </<tr>
 </tdbody>
 </table>
 
-# Vim - Git - GitHub
+#   WebApp con Django
 
 [![License][license]][license-file]
 [![Downloads][downloads]][releases]
@@ -64,9 +63,6 @@
 [![GitHub][GitHub]][github-site]
 [![Vim][Vim]][vim-site]
 [![Java][Java]][java-site]
-
-#
-
 # Informe - Método del Trapecio Paralelo
 ![531bf23f-8dd1-494b-9809-2626fe7461a7](https://github.com/user-attachments/assets/f3d37a4c-3b4e-440a-b115-35dbff221887)
 
