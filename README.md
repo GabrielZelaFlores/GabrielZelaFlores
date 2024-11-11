@@ -5,9 +5,7 @@
             <td style="width:25%;"><img src="https://github.com/rescobedoq/pw2/blob/main/epis.png?raw=true" alt="EPIS" style="width:80%; height:auto"/></td>
             <td>
                 <span style="font-weight:bold;">UNIVERSIDAD NACIONAL DE SAN AGUSTIN</span><br />
-                <span style="font-weight:bold;">FACULTAD DE INGENIERÍA DE PRODUCCIÓN Y SERVICIOS</span><br />
-                <span style="font-weight:bold;">DEPARTAMENTO ACADÉMICO DE INGENIERÍA DE SISTEMAS E INFORMÁTICA</span><br />
-                <span style="font-weight:bold;">ESCUELA PROFESIONAL DE INGENIERÍA DE SISTEMAS</span>
+                <span style="font-weight:bold;">ESCUELA PROFESIONAL DE INGENIERÍA DE SOFTWARE</span>
             </td>            
         </tr>
     </theader>
@@ -23,7 +21,7 @@
 </div>
 
 <div align="center">
-<span style="font-weight:bold;">PROYECTO WEB</span><br />
+<span style="font-weight:bold;">PROYECTO</span><br />
 </div>
 
 
@@ -33,17 +31,26 @@
 </theader>
 <tbody>
     <tr>
-        <td>ASIGNATURA:</td><td>Programación Web 2</td>
+        <td>ASIGNATURA:</td><td>Lenguaje de Programaición III</td>
     </tr>
     <tr>
         <td>SEMESTRE:</td><td>III</td>
     </tr>
     <tr>
-        <td>FECHA INICIO:</td><td>31-Jul-2023</td><td>FECHA FIN:</td>
-        <td>06-Ago-2023</td><td>DURACIÓN:</td><td>04 horas</td>
+        <td>INTEGRANTES:</td>- Castro Mamani Sebastian - [ 100% ]
+- Arapa Chua Davis - [ 100% ]
+- Romero Ramirez Joel - [ 100% ]
+- Huamani Vasquez Juan Jose - [ 100% ]
+- Delgado Chipana Piero Adrian - [ 100% ]
+- Zela Flores Gabriel - [ 100% ]<<td>PORCENTAJE DE PARTICIPACION:</td>
+        <td>-[ 100% ]
+- Romero Ramirez Joel - [ 100% ]
+- Huamani Vasquez Juan Jose - [ 100% ]
+- Delgado Chipana Piero Adrian - [ 100% ]
+- Zela Flores Gabriel - [ 100% ]</td><td>DURACIÓN:</td><td>04 horas</td>
     </tr>
     <tr>
-        <td colspan="3">DOCENTES:
+        <td colspan="3">DOCENTE:
         <ul>
         <li>Richart Smith Escobedo Quispe - rescobedoq@unsa.edu.pe</li>
         </ul>
