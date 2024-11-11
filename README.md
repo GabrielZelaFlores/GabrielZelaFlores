@@ -4,7 +4,9 @@
         <tr>
             <td style="width:25%;"><img src="https://github.com/rescobedoq/pw2/blob/main/epis.png?raw=true" alt="EPIS" style="width:80%; height:auto"/></td>
             <td>
-                <span style="font-weight:bold;">UNIVERSIDAD NACIONAL DE SAN AGUSTIN</span><br />
+                <span style="font-weight:bold;">UNIVERSIDAD LA SALLE</span><br />
+                <span style="font-weight:bold;">FACULTAD DE INGENIERÍA DE PRODUCCIÓN Y SERVICIOS</span><br />
+                <span style="font-weight:bold;">DEPARTAMENTO ACADÉMICO DE INGENIERÍA DE SISTEMAS E INFORMÁTICA</span><br />
                 <span style="font-weight:bold;">ESCUELA PROFESIONAL DE INGENIERÍA DE SOFTWARE</span>
             </td>            
         </tr>
@@ -21,9 +23,8 @@
 </div>
 
 <div align="center">
-<span style="font-weight:bold;">PROYECTO</span><br />
+<span style="font-weight:bold;">PROYECTO WEB</span><br />
 </div>
-
 
 <table>
 <theader>
@@ -31,45 +32,43 @@
 </theader>
 <tbody>
     <tr>
-        <td>ASIGNATURA:</td><td>Lenguaje de Programaición III</td>
+        <td>ASIGNATURA:</td><td>Programación Web 2</td>
     </tr>
     <tr>
         <td>SEMESTRE:</td><td>III</td>
     </tr>
     <tr>
-        <td>INTEGRANTES:</td>- Castro Mamani Sebastian - [ 100% ]
-- Arapa Chua Davis - [ 100% ]
-- Romero Ramirez Joel - [ 100% ]
-- Huamani Vasquez Juan Jose - [ 100% ]
-- Delgado Chipana Piero Adrian - [ 100% ]
-- Zela Flores Gabriel - [ 100% ]<<td>PORCENTAJE DE PARTICIPACION:</td>
-        <td>-[ 100% ]
-- Romero Ramirez Joel - [ 100% ]
-- Huamani Vasquez Juan Jose - [ 100% ]
-- Delgado Chipana Piero Adrian - [ 100% ]
-- Zela Flores Gabriel - [ 100% ]</td><td>DURACIÓN:</td><td>04 horas</td>
+        <td>INTEGRANTES:</td>
+        <td>- Castro Mamani Sebastian - 100%<br>
+            - Arapa Chua Davis - 100%<br>
+            - Romero Ramirez Joel - 100%<br>
+            - Huamani Vasquez Juan Jose - 100%<br>
+            - Delgado Chipana Piero Adrian - 100%<br>
+            - Zela Flores Gabriel - 100%
+        </td>
     </tr>
     <tr>
-        <td colspan="3">DOCENTE:
+        <td colspan="3">DOCENTES:
         <ul>
         <li>Richart Smith Escobedo Quispe - rescobedoq@unsa.edu.pe</li>
         </ul>
         </td>
-    </<tr>
-</tdbody>
+    </tr>
+</tbody>
 </table>
 
-#   WebApp con Django
+# WebApp con Django
 
-[![License][license]][license-file]
-[![Downloads][downloads]][releases]
-[![Last Commit][last-commit]][releases]
+[![License][license]][license-file]  
+[![Downloads][downloads]][releases]  
+[![Last Commit][last-commit]][releases]  
 
-[![Debian][Debian]][debian-site]
-[![Git][Git]][git-site]
-[![GitHub][GitHub]][github-site]
-[![Vim][Vim]][vim-site]
+[![Debian][Debian]][debian-site]  
+[![Git][Git]][git-site]  
+[![GitHub][GitHub]][github-site]  
+[![Vim][Vim]][vim-site]  
 [![Java][Java]][java-site]
+
 # Informe - Método del Trapecio Paralelo
 ![531bf23f-8dd1-494b-9809-2626fe7461a7](https://github.com/user-attachments/assets/f3d37a4c-3b4e-440a-b115-35dbff221887)
 
