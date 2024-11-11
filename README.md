@@ -3,7 +3,7 @@
     <theader>
         <tr>
             <td style="width:25%; text-align:center;">
-                <img src="https://github.com/rescobedoq/pw2/blob/main/epis.png?raw=true" alt="EPIS" style="width:80%; height:auto"/>
+                <img src="https://github.com/rescobedoq/pw2/blob/main/epis.png?raw=true" alt="EPIS" style="width:50%; height:auto"/>
             </td>
             <td style="text-align:center;">
                 <span style="font-weight:bold;">UNIVERSIDAD LA SALLE</span><br />
