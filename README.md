@@ -1,80 +1,55 @@
 <div align="center">
-<table border="0" style="border-collapse: collapse; width:80%; margin-top: 20px;">
-    <thead>
+<table>
+    <theader>
         <tr>
-            <td style="width:25%; text-align:center; padding: 10px;">
-                <img src="https://github.com/rescobedoq/pw2/blob/main/epis.png?raw=true" alt="EPIS" style="width:60%; height:auto"/>
-            </td>
-            <td style="text-align:center; padding: 10px;">
-                <span style="font-weight:bold; font-size:18px;">UNIVERSIDAD LA SALLE</span><br />
+            <td style="width:25%;"><img src="https://github.com/rescobedoq/pw2/blob/main/epis.png?raw=true" alt="EPIS" style="width:80%; height:auto"/></td>
+            <td>
+                <span style="font-weight:bold;">UNIVERSIDAD NACIONAL DE SAN AGUSTIN</span><br />
                 <span style="font-weight:bold;">FACULTAD DE INGENIERÍA DE PRODUCCIÓN Y SERVICIOS</span><br />
                 <span style="font-weight:bold;">DEPARTAMENTO ACADÉMICO DE INGENIERÍA DE SISTEMAS E INFORMÁTICA</span><br />
-                <span style="font-weight:bold;">ESCUELA PROFESIONAL DE INGENIERÍA DE SOFTWARE</span>
+                <span style="font-weight:bold;">ESCUELA PROFESIONAL DE INGENIERÍA DE SISTEMAS</span>
             </td>            
         </tr>
-    </thead>
+    </theader>
     <tbody>
         <tr>
-            <td colspan="2" style="text-align:center; padding: 10px;">
-                <span style="font-weight:bold; font-size:16px;">Proyecto web</span>: Desarrollo de una aplicación web para inscripción de laboratorios
-            </td>
+        <td colspan="2"><span style="font-weight:bold;">Proyecto web</span>: Desarrollo de una aplicación web para inscripción de laboratorios</td>
         </tr>
         <tr>
-            <td colspan="2" style="text-align:center; padding: 10px;">
-                <span style="font-weight:bold;">Fecha</span>: 2022/08/09
-            </td>
+        <td colspan="2"><span style="font-weight:bold;">Fecha</span>:  2022/08/09</td>
         </tr>
-        <tr>
-            <td colspan="2" style="padding: 20px;">
-                <table style="width:100%; border-collapse: collapse; margin: auto;">
-                    <thead>
-                        <tr>
-                            <th colspan="4" style="text-align:center; font-weight:bold; padding: 10px; font-size:16px;">INFORMACIÓN BÁSICA</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td style="font-weight:bold; width:25%; padding: 8px;">ASIGNATURA:</td>
-                            <td style="width:25%; padding: 8px;">Programación Web 2</td>
-                            <td style="font-weight:bold; width:25%; padding: 8px;">SEMESTRE:</td>
-                            <td style="width:25%; padding: 8px;">III</td>
-                        </tr>
-                        <tr>
-                            <td colspan="4" style="font-weight:bold; text-align:left; padding: 10px;">DOCENTES:</td>
-                        </tr>
-                        <tr>
-                            <td colspan="4" style="padding-left:20px;">
-                                <ul style="margin: 0; padding: 0;">
-                                    <li>Richart Smith Escobedo Quispe - rescobedoq@unsa.edu.pe</li>
-                                </ul>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2" style="padding: 20px;">
-                <table style="width:100%; border-collapse: collapse; margin: auto;">
-                    <thead>
-                        <tr>
-                            <th style="width:50%; text-align:center; font-weight:bold; padding: 10px;">INTEGRANTES</th>
-                            <th style="width:50%; text-align:center; font-weight:bold; padding: 10px;">PORCENTAJE</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td style="text-align:center; padding: 8px;">Castro Mamani Sebastian</td><td style="text-align:center; padding: 8px;">100%</td></tr>
-                        <tr><td style="text-align:center; padding: 8px;">Arapa Chua Davis</td><td style="text-align:center; padding: 8px;">100%</td></tr>
-                        <tr><td style="text-align:center; padding: 8px;">Romero Ramirez Joel</td><td style="text-align:center; padding: 8px;">100%</td></tr>
-                        <tr><td style="text-align:center; padding: 8px;">Huamani Vasquez Juan Jose</td><td style="text-align:center; padding: 8px;">100%</td></tr>
-                        <tr><td style="text-align:center; padding: 8px;">Delgado Chipana Piero Adrian</td><td style="text-align:center; padding: 8px;">100%</td></tr>
-                        <tr><td style="text-align:center; padding: 8px;">Zela Flores Gabriel</td><td style="text-align:center; padding: 8px;">100%</td></tr>
-                    </tbody>
-                </table>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2" style="text-align:center; padding: 20px;">
+    </tbody>
+</table>
+</div>
+
+<div align="center">
+<span style="font-weight:bold;">PROYECTO WEB</span><br />
+</div>
+
+<table>
+<theader>
+<tr><th>INFORMACIÓN BÁSICA</th></tr>
+</theader>
+<tbody>
+    <tr>
+        <td>ASIGNATURA:</td><td>Programación Web 2</td>
+    </tr>
+    <tr>
+        <td>SEMESTRE:</td><td>III</td>
+    </tr>
+    <tr>
+        <td>DURACIÓN:</td><td>04 horas</td>
+    </tr>
+    <tr>
+        <td colspan="3">DOCENTES:
+        <ul>
+        <li>Richart Smith Escobedo Quispe - rescobedoq@unsa.edu.pe</li>
+        </ul>
+        </td>
+    </tr>
+</tbody>
+</table>
+
      
 # Informe - Método del Trapecio Paralelo
 ![531bf23f-8dd1-494b-9809-2626fe7461a7](https://github.com/user-attachments/assets/f3d37a4c-3b4e-440a-b115-35dbff221887)
