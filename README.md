@@ -29,7 +29,7 @@
 </div>
 
 <div align="center" style="margin-top: 20px;">
-    <table border="1" style="border-collapse: collapse; width:80%;">
+    <table border="1" style="border-collapse: collapse; width:80%; height:200px;">
         <theader>
             <tr>
                 <th colspan="4" style="text-align:center;">INFORMACIÓN BÁSICA</th>
@@ -57,7 +57,7 @@
 </div>
 
 <div align="center" style="margin-top: 20px;">
-    <table border="1" style="border-collapse: collapse; width:80%;">
+    <table border="1" style="border-collapse: collapse; width:80%; height:200px;">
         <theader>
             <tr>
                 <th style="width:50%; text-align:center;">INTEGRANTES</th>
@@ -91,7 +91,6 @@
     [![Java][Java]][java-site]
 </div>
 
-Con esta estructura, todos los recuadros están ajustados a un ancho del 80% para mantener una alineación uniforme con el cuadro principal.
 # Informe - Método del Trapecio Paralelo
 ![531bf23f-8dd1-494b-9809-2626fe7461a7](https://github.com/user-attachments/assets/f3d37a4c-3b4e-440a-b115-35dbff221887)
 
