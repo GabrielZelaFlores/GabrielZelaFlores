@@ -36,26 +36,6 @@
         <td>SEMESTRE:</td><td>III</td>
     </tr>
     <tr>
-        <td>INTEGRANTES:</td>
-        <td>
-            - Castro Mamani Sebastian<br>
-            - Arapa Chua Davis<br>
-            - Romero Ramirez Joel<br>
-            - Huamani Vasquez Juan Jose<br>
-            - Delgado Chipana Piero Adrian<br>
-            - Zela Flores Gabriel
-        </td>
-        <td>PORCENTAJE:</td>
-        <td>
-            - 100%<br>
-            - 100%<br>
-            - 100%<br>
-            - 100%<br>
-            - 100%<br>
-            - 100%
-        </td>
-    </tr>
-    <tr>
         <td colspan="4">DOCENTES:
         <ul>
         <li>Richart Smith Escobedo Quispe - rescobedoq@unsa.edu.pe</li>
@@ -64,6 +44,25 @@
     </tr>
 </tbody>
 </table>
+
+<div align="center" style="margin-top: 20px;">
+    <table border="1" style="border-collapse: collapse; width:50%;">
+        <theader>
+            <tr>
+                <th>INTEGRANTES</th>
+                <th>PORCENTAJE</th>
+            </tr>
+        </theader>
+        <tbody>
+            <tr><td>Castro Mamani Sebastian</td><td>100%</td></tr>
+            <tr><td>Arapa Chua Davis</td><td>100%</td></tr>
+            <tr><td>Romero Ramirez Joel</td><td>100%</td></tr>
+            <tr><td>Huamani Vasquez Juan Jose</td><td>100%</td></tr>
+            <tr><td>Delgado Chipana Piero Adrian</td><td>100%</td></tr>
+            <tr><td>Zela Flores Gabriel</td><td>100%</td></tr>
+        </tbody>
+    </table>
+</div>
 
 # WebApp con Django
 
@@ -76,7 +75,6 @@
 [![GitHub][GitHub]][github-site]  
 [![Vim][Vim]][vim-site]  
 [![Java][Java]][java-site]
-
 
 # Informe - Método del Trapecio Paralelo
 ![531bf23f-8dd1-494b-9809-2626fe7461a7](https://github.com/user-attachments/assets/f3d37a4c-3b4e-440a-b115-35dbff221887)
