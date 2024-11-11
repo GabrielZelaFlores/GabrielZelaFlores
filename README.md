@@ -24,71 +24,75 @@
                 <span style="font-weight:bold;">Fecha</span>:  2022/08/09
             </td>
         </tr>
+        <tr>
+            <td colspan="2" style="padding: 20px;">
+                <table style="width:100%; border-collapse: collapse;">
+                    <theader>
+                        <tr>
+                            <th colspan="4" style="text-align:center; font-weight:bold;">INFORMACIÓN BÁSICA</th>
+                        </tr>
+                    </theader>
+                    <tbody>
+                        <tr>
+                            <td style="font-weight:bold; width:25%;">ASIGNATURA:</td>
+                            <td style="width:25%;">Programación Web 2</td>
+                            <td style="font-weight:bold; width:25%;">SEMESTRE:</td>
+                            <td style="width:25%;">III</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" style="font-weight:bold; text-align:left; padding-top: 10px;">DOCENTES:</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" style="padding-left:20px;">
+                                <ul>
+                                    <li>Richart Smith Escobedo Quispe - rescobedoq@unsa.edu.pe</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="padding: 20px;">
+                <table style="width:100%; border-collapse: collapse;">
+                    <theader>
+                        <tr>
+                            <th style="width:50%; text-align:center; font-weight:bold;">INTEGRANTES</th>
+                            <th style="width:50%; text-align:center; font-weight:bold;">PORCENTAJE</th>
+                        </tr>
+                    </theader>
+                    <tbody>
+                        <tr><td style="text-align:center;">Castro Mamani Sebastian</td><td style="text-align:center;">100%</td></tr>
+                        <tr><td style="text-align:center;">Arapa Chua Davis</td><td style="text-align:center;">100%</td></tr>
+                        <tr><td style="text-align:center;">Romero Ramirez Joel</td><td style="text-align:center;">100%</td></tr>
+                        <tr><td style="text-align:center;">Huamani Vasquez Juan Jose</td><td style="text-align:center;">100%</td></tr>
+                        <tr><td style="text-align:center;">Delgado Chipana Piero Adrian</td><td style="text-align:center;">100%</td></tr>
+                        <tr><td style="text-align:center;">Zela Flores Gabriel</td><td style="text-align:center;">100%</td></tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align:center; padding: 20px;">
+                <h2>WebApp con Django</h2>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align:center; padding: 10px;">
+                [![License][license]][license-file]  
+                [![Downloads][downloads]][releases]  
+                [![Last Commit][last-commit]][releases]  
+
+                [![Debian][Debian]][debian-site]  
+                [![Git][Git]][git-site]  
+                [![GitHub][GitHub]][github-site]  
+                [![Vim][Vim]][vim-site]  
+                [![Java][Java]][java-site]
+            </td>
+        </tr>
     </tbody>
 </table>
-</div>
-
-<div align="center" style="margin-top: 20px;">
-    <table border="1" style="border-collapse: collapse; width:80%; height:200px;">
-        <theader>
-            <tr>
-                <th colspan="4" style="text-align:center;">INFORMACIÓN BÁSICA</th>
-            </tr>
-        </theader>
-        <tbody>
-            <tr>
-                <td style="font-weight:bold; width:25%;">ASIGNATURA:</td>
-                <td style="width:25%;">Programación Web 2</td>
-                <td style="font-weight:bold; width:25%;">SEMESTRE:</td>
-                <td style="width:25%;">III</td>
-            </tr>
-            <tr>
-                <td colspan="4" style="font-weight:bold; text-align:left;">DOCENTES:</td>
-            </tr>
-            <tr>
-                <td colspan="4" style="padding-left:20px;">
-                    <ul>
-                        <li>Richart Smith Escobedo Quispe - rescobedoq@unsa.edu.pe</li>
-                    </ul>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-
-<div align="center" style="margin-top: 20px;">
-    <table border="1" style="border-collapse: collapse; width:80%; height:200px;">
-        <theader>
-            <tr>
-                <th style="width:50%; text-align:center;">INTEGRANTES</th>
-                <th style="width:50%; text-align:center;">PORCENTAJE</th>
-            </tr>
-        </theader>
-        <tbody>
-            <tr><td style="text-align:center;">Castro Mamani Sebastian</td><td style="text-align:center;">100%</td></tr>
-            <tr><td style="text-align:center;">Arapa Chua Davis</td><td style="text-align:center;">100%</td></tr>
-            <tr><td style="text-align:center;">Romero Ramirez Joel</td><td style="text-align:center;">100%</td></tr>
-            <tr><td style="text-align:center;">Huamani Vasquez Juan Jose</td><td style="text-align:center;">100%</td></tr>
-            <tr><td style="text-align:center;">Delgado Chipana Piero Adrian</td><td style="text-align:center;">100%</td></tr>
-            <tr><td style="text-align:center;">Zela Flores Gabriel</td><td style="text-align:center;">100%</td></tr>
-        </tbody>
-    </table>
-</div>
-
-<div style="margin-top: 20px; text-align:center;">
-    <h2>WebApp con Django</h2>
-</div>
-
-<div align="center">
-    [![License][license]][license-file]  
-    [![Downloads][downloads]][releases]  
-    [![Last Commit][last-commit]][releases]  
-
-    [![Debian][Debian]][debian-site]  
-    [![Git][Git]][git-site]  
-    [![GitHub][GitHub]][github-site]  
-    [![Vim][Vim]][vim-site]  
-    [![Java][Java]][java-site]
 </div>
 
 # Informe - Método del Trapecio Paralelo
