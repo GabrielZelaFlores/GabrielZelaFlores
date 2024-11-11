@@ -4,26 +4,24 @@
         <tr>
             <td style="width:25%;"><img src="https://github.com/rescobedoq/pw2/blob/main/epis.png?raw=true" alt="EPIS" style="width:80%; height:auto"/></td>
             <td>
-                <span style="font-weight:bold;">UNIVERSIDAD NACIONAL DE SAN AGUSTIN</span><br />
-                <span style="font-weight:bold;">FACULTAD DE INGENIERÍA DE PRODUCCIÓN Y SERVICIOS</span><br />
-                <span style="font-weight:bold;">DEPARTAMENTO ACADÉMICO DE INGENIERÍA DE SISTEMAS E INFORMÁTICA</span><br />
-                <span style="font-weight:bold;">ESCUELA PROFESIONAL DE INGENIERÍA DE SISTEMAS</span>
+                <span style="font-weight:bold;">UNIVERSIDAD LA SALLE</span><br />
+                <span style="font-weight:bold;">ESCUELA PROFESIONAL DE INGENIERÍA DE SOFTWARE</span>
             </td>            
         </tr>
     </theader>
     <tbody>
         <tr>
-        <td colspan="2"><span style="font-weight:bold;">Proyecto web</span>: Desarrollo de una aplicación web para inscripción de laboratorios</td>
+        <td colspan="2"><span style="font-weight:bold;">Proyecto</span>: Desarrollo de Juego</td>
         </tr>
         <tr>
-        <td colspan="2"><span style="font-weight:bold;">Fecha</span>:  2022/08/09</td>
+        <td colspan="2"><span style="font-weight:bold;">Fecha</span>:  2024/11/10</td>
         </tr>
     </tbody>
 </table>
 </div>
 
 <div align="center">
-<span style="font-weight:bold;">PROYECTO WEB</span><br />
+<span style="font-weight:bold;">PROYECTO</span><br />
 </div>
 
 <table>
@@ -32,16 +30,13 @@
 </theader>
 <tbody>
     <tr>
-        <td>ASIGNATURA:</td><td>Programación Web 2</td>
+        <td>ASIGNATURA:</td><td>Lenguaje de Programación III</td>
     </tr>
     <tr>
         <td>SEMESTRE:</td><td>III</td>
     </tr>
     <tr>
-        <td>DURACIÓN:</td><td>04 horas</td>
-    </tr>
-    <tr>
-        <td colspan="3">DOCENTES:
+        <td colspan="3">DOCENTE:
         <ul>
         <li>Richart Smith Escobedo Quispe - rescobedoq@unsa.edu.pe</li>
         </ul>
@@ -50,18 +45,19 @@
 </tbody>
 </table>
 
-     
+| Nro. | Nombre | Code | User | porcentaje |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| 1  | Castro Mamani Sebastian Adriano  | f70a0db  | SebastianCastro-ULS | 100% |
+| 2  | Arapa Chua Davis  | 265b390 | LenzG-alt  | 100% |
+| 3  | Romero Ramirez Joel  | 5f147fe | B3NJ1RO  | 100% |
+| 4  | Huamani Vasquez Juan Jose | 9a02763 | JuanHuamaniVasquez | 100% |
+| 5  | Delgado Chipana Piero Adrian | a6e6e07 | Vsrn12  | 100% |
+| 6  | Zela Flores Gabriel Frank  | 61501b4 | GabrielZelaFlores | 100% |
+
 # Informe - Método del Trapecio Paralelo
 ![531bf23f-8dd1-494b-9809-2626fe7461a7](https://github.com/user-attachments/assets/f3d37a4c-3b4e-440a-b115-35dbff221887)
 
-| Nro. | Commits | Code | User | Name |
-| ------------- | ------------- | ------------- | ------------- | ------------- |
-| 1  | Ejercicio del trapecio Secuencial.  | 61501b4  | GabrielZelaFlores  | Zela Flores Gabriel |
-| 2  | Ejercicio del Trapecio de forma Secuencial para funciones cuadraticas en c++.  | 9a02763 | JuanHuamaniVasquez  | Huamani Vasquez Juan Jose |
-| 3  | Ejercicio de Trapecio de forma Secuencial en Python.  | f70a0db | SebastianCastro-ULS  | Castro Mamani Sebastian |
-| 4  | Código de prueba para el algoritmo de solución de un integral mediante método del trapecio.  | 5f147fe | B3NJ1RO | Romero Ramirez Joel |
-| 5  | Agregando funciones al código para generar graficos.  | 265b390 | LenzG-alt | Arapa Chua Davis |
-| 6  | Agregando funcion al codigo para funciones infinitas.  | a6e6e07 | Vsrn12 | Delgado Chipana Piero Adrian |
+
 
 ## 1. Integrantes y Participación
 - Castro Mamani Sebastian - [ 100% ]
