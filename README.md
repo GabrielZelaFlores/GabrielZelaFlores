@@ -28,27 +28,35 @@
 
 <table>
 <theader>
-<tr><th>INFORMACIÓN BÁSICA</th></tr>
+<tr><th colspan="4">INFORMACIÓN BÁSICA</th></tr>
 </theader>
 <tbody>
     <tr>
         <td>ASIGNATURA:</td><td>Programación Web 2</td>
-    </tr>
-    <tr>
         <td>SEMESTRE:</td><td>III</td>
     </tr>
     <tr>
         <td>INTEGRANTES:</td>
-        <td>- Castro Mamani Sebastian - 100%<br>
-            - Arapa Chua Davis - 100%<br>
-            - Romero Ramirez Joel - 100%<br>
-            - Huamani Vasquez Juan Jose - 100%<br>
-            - Delgado Chipana Piero Adrian - 100%<br>
-            - Zela Flores Gabriel - 100%
+        <td>
+            - Castro Mamani Sebastian<br>
+            - Arapa Chua Davis<br>
+            - Romero Ramirez Joel<br>
+            - Huamani Vasquez Juan Jose<br>
+            - Delgado Chipana Piero Adrian<br>
+            - Zela Flores Gabriel
+        </td>
+        <td>PORCENTAJE:</td>
+        <td>
+            - 100%<br>
+            - 100%<br>
+            - 100%<br>
+            - 100%<br>
+            - 100%<br>
+            - 100%
         </td>
     </tr>
     <tr>
-        <td colspan="3">DOCENTES:
+        <td colspan="4">DOCENTES:
         <ul>
         <li>Richart Smith Escobedo Quispe - rescobedoq@unsa.edu.pe</li>
         </ul>
@@ -68,6 +76,7 @@
 [![GitHub][GitHub]][github-site]  
 [![Vim][Vim]][vim-site]  
 [![Java][Java]][java-site]
+
 
 # Informe - Método del Trapecio Paralelo
 ![531bf23f-8dd1-494b-9809-2626fe7461a7](https://github.com/user-attachments/assets/f3d37a4c-3b4e-440a-b115-35dbff221887)
