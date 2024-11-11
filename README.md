@@ -1,9 +1,11 @@
 <div align="center">
-<table>
+<table border="1" style="border-collapse: collapse; width:80%; margin-top: 20px;">
     <theader>
         <tr>
-            <td style="width:25%;"><img src="https://github.com/rescobedoq/pw2/blob/main/epis.png?raw=true" alt="EPIS" style="width:80%; height:auto"/></td>
-            <td>
+            <td style="width:25%; text-align:center;">
+                <img src="https://github.com/rescobedoq/pw2/blob/main/epis.png?raw=true" alt="EPIS" style="width:80%; height:auto"/>
+            </td>
+            <td style="text-align:center;">
                 <span style="font-weight:bold;">UNIVERSIDAD LA SALLE</span><br />
                 <span style="font-weight:bold;">FACULTAD DE INGENIERÍA DE PRODUCCIÓN Y SERVICIOS</span><br />
                 <span style="font-weight:bold;">DEPARTAMENTO ACADÉMICO DE INGENIERÍA DE SISTEMAS E INFORMÁTICA</span><br />
@@ -13,68 +15,81 @@
     </theader>
     <tbody>
         <tr>
-        <td colspan="2"><span style="font-weight:bold;">Proyecto web</span>: Desarrollo de una aplicación web para inscripción de laboratorios</td>
+            <td colspan="2" style="text-align:center;">
+                <span style="font-weight:bold;">Proyecto web</span>: Desarrollo de una aplicación web para inscripción de laboratorios
+            </td>
         </tr>
         <tr>
-        <td colspan="2"><span style="font-weight:bold;">Fecha</span>:  2022/08/09</td>
+            <td colspan="2" style="text-align:center;">
+                <span style="font-weight:bold;">Fecha</span>:  2022/08/09
+            </td>
         </tr>
     </tbody>
 </table>
 </div>
 
-<div align="center">
-<span style="font-weight:bold;">PROYECTO WEB</span><br />
-</div>
-
-<table>
-<theader>
-<tr><th colspan="4">INFORMACIÓN BÁSICA</th></tr>
-</theader>
-<tbody>
-    <tr>
-        <td>ASIGNATURA:</td><td>Programación Web 2</td>
-        <td>SEMESTRE:</td><td>III</td>
-    </tr>
-    <tr>
-        <td colspan="4">DOCENTES:
-        <ul>
-        <li>Richart Smith Escobedo Quispe - rescobedoq@unsa.edu.pe</li>
-        </ul>
-        </td>
-    </tr>
-</tbody>
-</table>
-
 <div align="center" style="margin-top: 20px;">
-    <table border="1" style="border-collapse: collapse; width:50%;">
+    <table border="1" style="border-collapse: collapse; width:80%;">
         <theader>
             <tr>
-                <th>INTEGRANTES</th>
-                <th>PORCENTAJE</th>
+                <th colspan="4" style="text-align:center;">INFORMACIÓN BÁSICA</th>
             </tr>
         </theader>
         <tbody>
-            <tr><td>Castro Mamani Sebastian</td><td>100%</td></tr>
-            <tr><td>Arapa Chua Davis</td><td>100%</td></tr>
-            <tr><td>Romero Ramirez Joel</td><td>100%</td></tr>
-            <tr><td>Huamani Vasquez Juan Jose</td><td>100%</td></tr>
-            <tr><td>Delgado Chipana Piero Adrian</td><td>100%</td></tr>
-            <tr><td>Zela Flores Gabriel</td><td>100%</td></tr>
+            <tr>
+                <td style="font-weight:bold; width:25%;">ASIGNATURA:</td>
+                <td style="width:25%;">Programación Web 2</td>
+                <td style="font-weight:bold; width:25%;">SEMESTRE:</td>
+                <td style="width:25%;">III</td>
+            </tr>
+            <tr>
+                <td colspan="4" style="font-weight:bold; text-align:left;">DOCENTES:</td>
+            </tr>
+            <tr>
+                <td colspan="4" style="padding-left:20px;">
+                    <ul>
+                        <li>Richart Smith Escobedo Quispe - rescobedoq@unsa.edu.pe</li>
+                    </ul>
+                </td>
+            </tr>
         </tbody>
     </table>
 </div>
 
-# WebApp con Django
+<div align="center" style="margin-top: 20px;">
+    <table border="1" style="border-collapse: collapse; width:80%;">
+        <theader>
+            <tr>
+                <th style="width:50%; text-align:center;">INTEGRANTES</th>
+                <th style="width:50%; text-align:center;">PORCENTAJE</th>
+            </tr>
+        </theader>
+        <tbody>
+            <tr><td style="text-align:center;">Castro Mamani Sebastian</td><td style="text-align:center;">100%</td></tr>
+            <tr><td style="text-align:center;">Arapa Chua Davis</td><td style="text-align:center;">100%</td></tr>
+            <tr><td style="text-align:center;">Romero Ramirez Joel</td><td style="text-align:center;">100%</td></tr>
+            <tr><td style="text-align:center;">Huamani Vasquez Juan Jose</td><td style="text-align:center;">100%</td></tr>
+            <tr><td style="text-align:center;">Delgado Chipana Piero Adrian</td><td style="text-align:center;">100%</td></tr>
+            <tr><td style="text-align:center;">Zela Flores Gabriel</td><td style="text-align:center;">100%</td></tr>
+        </tbody>
+    </table>
+</div>
 
-[![License][license]][license-file]  
-[![Downloads][downloads]][releases]  
-[![Last Commit][last-commit]][releases]  
+<div style="margin-top: 20px; text-align:center;">
+    <h2>WebApp con Django</h2>
+</div>
 
-[![Debian][Debian]][debian-site]  
-[![Git][Git]][git-site]  
-[![GitHub][GitHub]][github-site]  
-[![Vim][Vim]][vim-site]  
-[![Java][Java]][java-site]
+<div align="center">
+    [![License][license]][license-file]  
+    [![Downloads][downloads]][releases]  
+    [![Last Commit][last-commit]][releases]  
+
+    [![Debian][Debian]][debian-site]  
+    [![Git][Git]][git-site]  
+    [![GitHub][GitHub]][github-site]  
+    [![Vim][Vim]][vim-site]  
+    [![Java][Java]][java-site]
+</div>
 
 # Informe - Método del Trapecio Paralelo
 ![531bf23f-8dd1-494b-9809-2626fe7461a7](https://github.com/user-attachments/assets/f3d37a4c-3b4e-440a-b115-35dbff221887)
