@@ -1,5 +1,5 @@
 <div align="center">
-<table border="1" style="border-collapse: collapse; width:80%; margin-top: 20px;">
+<table border="0" style="border-collapse: collapse; width:80%; margin-top: 20px;">
     <theader>
         <tr>
             <td style="width:25%; text-align:center;">
@@ -34,10 +34,10 @@
                     </theader>
                     <tbody>
                         <tr>
-                            <td style="font-weight:bold; width:25%;">ASIGNATURA:</td>
-                            <td style="width:25%;">Programación Web 2</td>
-                            <td style="font-weight:bold; width:25%;">SEMESTRE:</td>
-                            <td style="width:25%;">III</td>
+                            <td style="font-weight:bold; width:50%;">ASIGNATURA:</td>
+                            <td style="width:50%;">Programación Web 2</td>
+                            <td style="font-weight:bold; width:50%;">SEMESTRE:</td>
+                            <td style="width:50%;">III</td>
                         </tr>
                         <tr>
                             <td colspan="4" style="font-weight:bold; text-align:left; padding-top: 10px;">DOCENTES:</td>
@@ -75,26 +75,7 @@
         </tr>
         <tr>
             <td colspan="2" style="text-align:center; padding: 20px;">
-                <h2>WebApp con Django</h2>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2" style="text-align:center; padding: 10px;">
-                [![License][license]][license-file]  
-                [![Downloads][downloads]][releases]  
-                [![Last Commit][last-commit]][releases]  
-
-                [![Debian][Debian]][debian-site]  
-                [![Git][Git]][git-site]  
-                [![GitHub][GitHub]][github-site]  
-                [![Vim][Vim]][vim-site]  
-                [![Java][Java]][java-site]
-            </td>
-        </tr>
-    </tbody>
-</table>
-</div>
-
+         
 # Informe - Método del Trapecio Paralelo
 ![531bf23f-8dd1-494b-9809-2626fe7461a7](https://github.com/user-attachments/assets/f3d37a4c-3b4e-440a-b115-35dbff221887)
 
