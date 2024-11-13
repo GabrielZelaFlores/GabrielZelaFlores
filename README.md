@@ -264,7 +264,7 @@ Para ejecutar esta interfaz de usuario en Unity, sigue estos pasos:
 
 ---
 
-# Proyecto: Juego de Ruleta Rusa
+# Proyecto: Linuxerzzz Game Ruleta Rusa
 
 Este proyecto es un simulador de un juego de Ruleta Rusa entre dos jugadores: un jugador humano y una computadora. Cada jugador tiene un número inicial de vidas, y el objetivo es sobrevivir hasta que el oponente pierda todas sus vidas. A lo largo del juego, cada jugador puede dispararse a sí mismo o al oponente y puede usar objetos especiales con efectos únicos que afectan el juego.
 
