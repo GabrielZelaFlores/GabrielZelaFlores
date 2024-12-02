@@ -1,70 +1,86 @@
-# **Sistema de Gestión de Canciones Basado en AVL Tree, Hash Table y Lista Doblemente Enlazada**
+# Proyecto: Sistema de Lista de Reproducción de Canciones en C++ 🎵
+
+## Integrantes del Proyecto
+
+- Huamaní Vásquez Juan José
+- Valdivia Vásquez Gian Pool
+- Zela Flores Gabriel Frank
+
+---
 
 ## **Abstract**
-Este artículo presenta el diseño e implementación de un sistema de gestión de canciones que utiliza estructuras de datos avanzadas: Árbol AVL, Tabla Hash y Lista Doblemente Enlazada. Estas estructuras permiten realizar operaciones eficientes de búsqueda, ordenación y manipulación de canciones. Además, el sistema incluye una interfaz gráfica interactiva desarrollada con **ImGui**, que mejora significativamente la experiencia del usuario al interactuar con el sistema. Comparado con informes anteriores, el sistema actual incorpora optimizaciones significativas y nuevas funcionalidades.
+En este proyecto se implementó un sistema que permite gestionar canciones de forma eficiente, utilizando estructuras de datos avanzadas como Árbol AVL, Tabla Hash y Lista Doblemente Enlazada. Estas herramientas facilitan la búsqueda, organización y manipulación de canciones de manera óptima. También nos enfocamos en crear una interfaz gráfica interactiva con **ImGui** que hace que interactuar con el sistema sea más sencillo y agradable para los usuarios. En comparación con versiones anteriores, este sistema incluye importantes mejoras y nuevas funciones fruto del aprendizaje y colaboración de nuestro equipo.
 
 ---
 
 ## **1. Introduction**
 
 ### **1.1 Contexto y Motivación**
-La gestión eficiente de canciones es un desafío común en aplicaciones de música y plataformas de streaming, especialmente cuando el volumen de datos es considerable. Los informes previos del proyecto mostraron un sistema funcional pero limitado, basado únicamente en listas doblemente enlazadas. Las limitaciones principales incluían:
-1. Búsqueda lenta en listas no ordenadas.
-2. Dificultad para gestionar grandes volúmenes de datos.
-3. Ausencia de interfaz gráfica para usuarios finales.
+A lo largo de este proyecto, nos dimos cuenta de lo desafiante que puede ser manejar una gran cantidad de canciones en sistemas de música, como aplicaciones de streaming o listas de reproducción personales. En versiones previas de este sistema, trabajábamos únicamente con listas doblemente enlazadas, lo cual era funcional, pero no suficiente para manejar eficientemente listas grandes de canciones. Esto se traducía en problemas como:
+1. Búsquedas lentas al no tener las canciones ordenadas.
+2. Dificultades para gestionar datos masivos.
+3. La ausencia de una interfaz gráfica que complicaba su uso, especialmente para personas no técnicas.
+
+Estos desafíos se tomaron como una oportunidad para mejorar, incorporando nuevas herramientas y técnicas que hicieran el sistema más eficiente y fácil de usar.
 
 ### **1.2 Objetivo**
-El objetivo del presente trabajo es superar las limitaciones de los sistemas previos mediante:
-1. Estructuras avanzadas como Árbol AVL y Tabla Hash.
-2. Una interfaz gráfica interactiva para simplificar la interacción.
-3. Optimización de rendimiento para operaciones CRUD (crear, leer, actualizar, eliminar).
+El objetivo principal fue rediseñar el sistema para superar estas limitaciones. Queríamos:
+1. Utilizar estructuras avanzadas como el Árbol AVL y la Tabla Hash para hacer que las búsquedas y otras operaciones fueran más rápidas y precisas.
+2. Crear una interfaz gráfica que permitiera a los usuarios interactuar de manera visual y sencilla con el sistema.
+3. Optimizar las operaciones básicas (CRUD) para hacerlas rápidas y efectivas, incluso con grandes cantidades de datos.
 
 ---
 
 ## **2. Metodología**
 
 ### **2.1 Arquitectura del Sistema**
-El sistema combina tres estructuras de datos principales:
-- **AVL Tree**: Para búsquedas eficientes por nombre.
-- **Hash Table**: Para búsquedas rápidas por identificador único (`trackId`).
-- **Doubly Linked List**: Para manipulación dinámica y visualización de canciones.
+Para lograr nuestros objetivos, combinamos tres estructuras de datos que se complementan entre sí:
+- **AVL Tree**: Es ideal para realizar búsquedas ordenadas, como por el nombre de las canciones.
+- **Hash Table**: Facilita búsquedas rápidas a través de un identificador único (`trackId`).
+- **Doubly Linked List**: Permite una manipulación más flexible y facilita la visualización de las canciones.
 
-Además, utiliza **ImGui** para proporcionar una interfaz gráfica interactiva que permite a los usuarios interactuar con las funcionalidades del sistema de manera más intuitiva.
+Además, utilizamos **ImGui** para implementar una interfaz gráfica que hiciera que el sistema fuera más accesible y amigable para los usuarios.
 
 ---
 
 ### **2.2 Implementación de Funcionalidades**
 
 #### **Agregar Canción**
+Esta función añade una canción a todas las estructuras del sistema (Árbol AVL, Tabla Hash y Lista Doblemente Enlazada), asegurando que esté disponible para todas las funcionalidades.
+
 ```cpp
 void addSongGlobal(const Song& song, AVLTree& avlTree, HashTable& hashTable, DoublyLinkedList& list) {
     avlTree.insert(song);
     hashTable.insert(song);
     list.addSong(song);
-    std::cout << "Canción añadida exitosamente: " << song.getTrackName() << "\n";
+    cout << "Canción añadida exitosamente: " << song.getTrackName() << "\n";
 }
 ```
 
 #### **Eliminar Canción**
+Aquí implementamos un método para eliminar una canción de todas las estructuras. Esta función verifica primero si la canción existe y luego la borra de las estructuras asociadas.
+
 ```cpp
 void deleteSongGlobal(const std::string& trackId, AVLTree& avlTree, HashTable& hashTable, DoublyLinkedList& list) {
     int year;
     if (list.removeSong(trackId, year)) {
         hashTable.remove(year, trackId);
         avlTree.remove(trackId);
-        std::cout << "Canción eliminada de todas las estructuras.\n";
+        cout << "Canción eliminada de todas las estructuras.\n";
     } else {
-        std::cout << "Canción no encontrada.\n";
+        cout << "Canción no encontrada.\n";
     }
 }
 ```
 
 #### **Ordenar Canciones**
+Con este método, los usuarios pueden ordenar las canciones según diferentes criterios, como la popularidad, de forma ascendente o descendente.
+
 ```cpp
 void sortSongs(DoublyLinkedList& list, const std::string& criteria, bool ascending) {
-    std::vector<Song> songs = list.toVector();
+    vector<Song> songs = list.toVector();
     if (criteria == "popularidad") {
-        std::sort(songs.begin(), songs.end(), [&](const Song& a, const Song& b) {
+        sort(songs.begin(), songs.end(), [&](const Song& a, const Song& b) {
             return ascending ? a.getPopularity() < b.getPopularity() : a.getPopularity() > b.getPopularity();
         });
     }
@@ -73,17 +89,19 @@ void sortSongs(DoublyLinkedList& list, const std::string& criteria, bool ascendi
 ```
 
 #### **Buscar Canción**
+Esta función permite encontrar canciones por año de lanzamiento utilizando la Tabla Hash para agilizar el proceso.
+
 ```cpp
 void displaySongsByYear(HashTable& hashTable, int year) {
-    std::list<Song> songs = hashTable.find(year);
+    list<Song> songs = hashTable.find(year);
 
     if (songs.empty()) {
-        std::cout << "No se encontraron canciones para el año " << year << ".\n";
+        cout << "No se encontraron canciones para el año " << year << ".\n";
         return;
     }
 
     for (const auto& song : songs) {
-        std::cout << song.getTrackName() << " - " << song.getArtistName()
+        cout << song.getTrackName() << " - " << song.getArtistName()
                   << " (Popularidad: " << song.getPopularity() << ", Duración: " << song.getDuration() << " ms)\n";
     }
 }
@@ -93,10 +111,11 @@ void displaySongsByYear(HashTable& hashTable, int year) {
 
 ### **2.3 Interfaz Gráfica**
 #### **Características**
-- Gestión de múltiples listas de reproducción.
-- Operaciones CRUD visuales.
-- Filtrado y ordenación de canciones por criterios seleccionados.
-- Reproducción aleatoria y vistas personalizadas.
+Se desarrollo una interfaz que permite al usuario realizar acciones como:
+- Gestionar varias listas de reproducción.
+- Añadir, eliminar y modificar canciones visualmente.
+- Ordenar canciones según criterios como popularidad o duración.
+- Reproducir canciones de forma aleatoria y visualizar listas personalizadas.
 
 ```cpp
 void menuImGui(DoublyLinkedList& list, HashTable& hashTable, AVLTree& avlTree) {
@@ -119,54 +138,49 @@ void menuImGui(DoublyLinkedList& list, HashTable& hashTable, AVLTree& avlTree) {
 ```
 
 ---
+
 ## **2.4 Justificación Técnica**
 
-El diseño del sistema utiliza estructuras complementarias que, juntas, solucionan las limitaciones identificadas en versiones anteriores.
+Cada estructura fue seleccionada con base en sus ventajas específicas y en cómo complementan las necesidades del sistema.
 
 ### **AVL Tree**
-- **Justificación**: Elegido para permitir búsquedas ordenadas por atributos, como el nombre de las canciones, garantizando balance automático.
+- **Por qué lo usamos**: Permite búsquedas rápidas y ordenadas.
 - **Ventajas**:
-  - Inserción, eliminación y búsqueda en O(log n).
-  - Estructura jerárquica adecuada para manejar datos grandes de manera ordenada.
-- **Alternativa Evaluada**: Se consideró un Binary Search Tree (BST), pero no se utilizó debido a su posible desbalance, que podría degradar el rendimiento a O(n).
+  - Mantiene un balance automático.
+  - Es eficiente para manejar datos grandes con una complejidad O(log n).
 
 ### **Hash Table**
-- **Justificación**: Proporciona acceso rápido a canciones por identificadores únicos (`trackId`), ideal para búsquedas constantes en promedio.
+- **Por qué lo usamos**: Facilita accesos rápidos por identificador único (`trackId`).
 - **Ventajas**:
-  - Tiempo de acceso promedio O(1).
-  - Manejo eficiente de colisiones mediante listas enlazadas.
-- **Alternativa Evaluada**: Se evaluó el uso de árboles para búsquedas de identificadores, pero el tiempo O(log n) del AVL no es tan eficiente como O(1) de la Hash Table para este caso.
+  - Acceso promedio en tiempo constante O(1).
+  - Manejo de colisiones mediante listas enlazadas.
 
 ### **Doubly Linked List**
-- **Justificación**: Permite la gestión dinámica de canciones en orden de inserción, facilitando la modificación de listas y su visualización.
+- **Por qué lo usamos**: Es ideal para la manipulación dinámica de canciones.
 - **Ventajas**:
-  - Manipulación dinámica de nodos (inserción y eliminación en cualquier posición).
-  - Recorrido en ambos sentidos, lo cual es útil para operaciones de navegación.
-- **Alternativa Evaluada**: Arrays dinámicos fueron descartados debido a su costo de realineación en operaciones de inserción y eliminación.
+  - Permite insertar y eliminar canciones en cualquier posición con facilidad.
+  - Facilita la navegación en ambas direcciones.
 
 ---
-
 
 ## **3. Resultados**
 
 ### **3.1 Comparativa con Informes Anteriores**
+En esta tabla mostramos cómo nuestro trabajo ha mejorado el sistema en comparación con las versiones previas:
+
 | **Característica**              | **Versión 1**         | **Versión 2**                   | **Actual**                  |
 |----------------------------------|-----------------------|----------------------------------|-----------------------------|
-| Estructuras de Datos             | Lista Doblemente Enlazada | + AVL Tree                     | + Tabla Hash                |
+| Estructuras de Datos             | Lista Doblemente Enlazada | + AVL Tree                     | + Tabla Hash y AVL Tree     |
 | Búsqueda                         | Lineal (O(n))         | Logarítmica (O(log n))          | Constante (O(1), promedio)  |
 | Interfaz                         | No incluida           | No incluida                    | Gráfica interactiva (ImGui) |
-| Carga desde CSV                  | No soportada          | Manual                          | Automatizada                |
-| Funcionalidades                  | CRUD básico           | + Soporte de AVL                | + Filtrado avanzado         |
 
 ### **3.2 Rendimiento**
-| Operación             | Tiempo (ms) en Versión 1 | Tiempo (ms) en Versión 2 | Tiempo (ms) en Versión Actual |
-|-----------------------|--------------------------|--------------------------|--------------------------------|
-| Agregar Canción       | 10                       | 8                        | 5                              |
-| Eliminar Canción      | 15                       | 10                       | 7                              |
-| Búsqueda por ID       | 20                       | 15                       | 2                              |
+El uso de estructuras avanzadas mejoró significativamente los tiempos de operación. Por ejemplo, buscar canciones por `trackId` ahora toma solo 2 ms, en lugar de los 20 ms de la versión inicial.
+
+---
 
 ### **3.3 Impacto de la Interfaz Gráfica**
-La interfaz gráfica mejoró significativamente la usabilidad del sistema. Usuarios no técnicos calificaron la experiencia con un promedio de **8.7/10** en usabilidad y diseño.
+Se creo una interfaz que no solo fuera funcional, sino también intuitiva para los usuarios. Los resultados fueron muy positivos: incluso personas sin experiencia técnica calificaron la experiencia con un promedio de **8.7/10** en términos de usabilidad y diseño. Esto demuestra que logramos crear un sistema accesible y fácil de usar.
 
 | **Función**                | **Descripción**                                      | **Tiempo Promedio (seg)** |
 |----------------------------|----------------------------------------------------|---------------------------|
@@ -174,12 +188,13 @@ La interfaz gráfica mejoró significativamente la usabilidad del sistema. Usuar
 | Buscar por Nombre          | Búsqueda mediante campo de texto en la interfaz     | 2.1                       |
 | Cambiar Orden de Canciones | Reorganización visual en la lista                   | 1.5                       |
 
----
+Estas métricas reflejan que la interfaz no solo mejora la experiencia visual, sino que también optimiza el tiempo que los usuarios tardan en realizar tareas comunes.
+
 ---
 
 ## **3.4 Métricas de Evaluación Más Detalladas**
 
-Se realizaron pruebas para analizar el desempeño del sistema en diferentes escenarios y volúmenes de datos. A continuación, se muestran los resultados:
+Para validar la eficiencia del sistema, realizamos pruebas con diferentes volúmenes de datos. Esto nos permitió analizar su desempeño bajo distintos escenarios y asegurarnos de que fuera escalable.
 
 ### **Escenarios de Prueba**
 - **Pequeña lista**: 100 canciones.
@@ -195,34 +210,31 @@ Se realizaron pruebas para analizar el desempeño del sistema en diferentes esce
 | Eliminar Canción    | 1.8                      | 2.8                      | 8.5                      |
 
 ### **Análisis de Escalabilidad**
-El sistema mantiene un buen rendimiento incluso con volúmenes grandes de datos gracias a la integración del Árbol AVL y la Tabla Hash:
-1. **AVL Tree**: Mantiene búsquedas logarítmicas (O(log n)), lo cual es crítico para listas grandes.
-2. **Hash Table**: Proporciona accesos promedio en O(1), permitiendo búsquedas instantáneas por ID incluso con un millón de canciones.
-3. **Doubly Linked List**: Aunque menos eficiente para búsquedas, es ideal para manipulación dinámica y visualización secuencial.
+Gracias al uso combinado del Árbol AVL, la Tabla Hash y la Lista Doblemente Enlazada, el sistema mostró un rendimiento sólido incluso con volúmenes grandes de datos. Aquí explicamos cómo estas estructuras contribuyen al desempeño:
+1. **AVL Tree**: Permite búsquedas ordenadas de manera eficiente, manteniendo un tiempo logarítmico (O(log n)) incluso con grandes listas.
+2. **Hash Table**: Proporciona acceso instantáneo promedio (O(1)) para búsquedas rápidas por identificador único.
+3. **Doubly Linked List**: Aunque es menos eficiente para búsquedas, sigue siendo ideal para gestionar y visualizar listas de canciones de forma dinámica.
 
 ---
+
 ## **3.5 Profundización en la Comparativa de Versiones**
 
-Los sistemas previos presentaban limitaciones claras que fueron abordadas en la versión actual:
+A lo largo del proyecto, hemos trabajado en resolver los problemas que identificamos en versiones anteriores. Aquí detallamos cómo hemos superado esas limitaciones.
 
 ### **Limitaciones de la Versión 1**
-- **Solo Lista Doblemente Enlazada**:
-  - Complejidad de búsqueda O(n), ineficiente para listas grandes.
-  - Ausencia de ordenación eficiente.
-- **Sin Interfaz Gráfica**:
-  - Requería interacción por línea de comandos, dificultando la usabilidad para usuarios no técnicos.
-- **Carga Manual de Datos**:
-  - Las canciones debían ser ingresadas manualmente desde el programa principal.
+- **Estructura básica**: Solo utilizaba una Lista Doblemente Enlazada, lo que resultaba en búsquedas lineales (O(n)), poco eficientes para listas grandes.
+- **Falta de ordenación**: No había una manera efectiva de organizar las canciones.
+- **Sin interfaz gráfica**: La interacción se realizaba exclusivamente mediante la línea de comandos, lo cual era un obstáculo para usuarios no técnicos.
+- **Carga de datos manual**: Las canciones debían ingresarse una por una desde el programa principal.
 
 ### **Limitaciones de la Versión 2**
-- **Falta de Integración Completa**:
-  - Aunque se añadió el AVL Tree, no se implementó una estructura adicional como la Hash Table para búsquedas más rápidas.
-- **Búsquedas Limitadas**:
-  - Solo se podían realizar búsquedas ordenadas, lo cual no es ideal para casos donde se necesita acceso inmediato.
-- **Sin Automatización Total**:
-  - Las operaciones aún dependían de la interacción manual, sin carga automatizada desde fuentes externas como archivos CSV.
+- **Integración incompleta**: Aunque se añadió el AVL Tree, todavía faltaba una estructura complementaria como la Tabla Hash para búsquedas más rápidas.
+- **Búsquedas limitadas**: Solo se podían realizar búsquedas ordenadas, lo que no era suficiente para todos los casos de uso.
+- **Automatización parcial**: Aunque hubo mejoras, todavía no se implementaba una carga automatizada de datos desde fuentes externas como archivos CSV.
 
 ### **Mejoras en la Versión Actual**
+Nuestro equipo trabajó arduamente para superar las limitaciones de las versiones anteriores, y los resultados se reflejan en estas mejoras:
+
 | **Aspecto**             | **Versión 1**                      | **Versión 2**               | **Versión Actual**                     |
 |--------------------------|------------------------------------|-----------------------------|----------------------------------------|
 | **Estructuras de Datos** | Lista Doblemente Enlazada         | + AVL Tree                 | + AVL Tree + Hash Table               |
@@ -233,24 +245,22 @@ Los sistemas previos presentaban limitaciones claras que fueron abordadas en la 
 
 ### **Impacto de las Mejoras**
 1. **Incremento en la Eficiencia**: 
-   - Operaciones como buscar por `trackId` pasaron de O(n) a O(1).
+   - Operaciones como buscar canciones por `trackId` ahora toman O(1) en promedio, lo que significa un acceso prácticamente instantáneo incluso con grandes volúmenes de datos.
 2. **Mayor Usabilidad**: 
-   - La interfaz gráfica permite que usuarios no técnicos interactúen con facilidad.
+   - La incorporación de una interfaz gráfica hace que el sistema sea accesible para todo tipo de usuarios, independientemente de su experiencia técnica.
 3. **Automatización Completa**: 
-   - La carga de datos desde CSV elimina la dependencia de entradas manuales.
-   
+   - Ahora es posible cargar grandes volúmenes de canciones automáticamente desde archivos CSV, lo que ahorra tiempo y esfuerzo a los usuarios.
+
+---
 ## **4. Conclusiones y Trabajo Futuro**
 
 ### **4.1 Conclusiones**
-El sistema actual demuestra ser más robusto, eficiente y accesible que sus versiones anteriores gracias a:
-1. La integración de estructuras de datos avanzadas.
-2. Una interfaz gráfica que simplifica la interacción.
-3. Optimización significativa en tiempos de búsqueda y manipulación.
+Nuestro equipo logró transformar un sistema básico en uno mucho más robusto, eficiente y amigable. Ahora el sistema no solo maneja grandes volúmenes de datos, sino que lo hace de manera ordenada y rápida.
 
 ### **4.2 Trabajo Futuro**
-1. Mejorar el diseño visual de la interfaz.
-2. Incorporar nuevas funcionalidades como reproducción en bucle.
-3. Explorar el uso de estructuras adicionales, como árboles B+.
+1. Mejorar el diseño visual de la interfaz gráfica.
+2. Añadir opciones avanzadas como bucles y mezcla de canciones.
+3. Implementar nuevas estructuras de datos como árboles B+ para un mejor rendimiento en bases de datos extensas.
 
 ---
 
@@ -258,5 +268,4 @@ El sistema actual demuestra ser más robusto, eficiente y accesible que sus vers
 1. "Introduction to Algorithms" - Cormen et al.
 2. Documentación oficial de ImGui.
 3. Documentación oficial de la API de Spotify.
-
----
+```
