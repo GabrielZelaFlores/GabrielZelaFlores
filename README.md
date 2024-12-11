@@ -220,3 +220,33 @@ public void DealDamage()
 3. **Scripts de Gameplay**:
    - Integrar los scripts mencionados en sus respectivos GameObjects.
    - Configurar animaciones, colliders y referencias en Unity.
+
+## Ejecución del Juego
+
+### 1. Configuración del Backend
+1. Crear una base de datos en MySQL llamada `unityjuegosesiones`.
+2. Crear una tabla `users` con las siguientes columnas:
+   - `id` (INT, AUTO_INCREMENT, PRIMARY KEY)
+   - `username` (VARCHAR)
+   - `password` (VARCHAR)
+   - `level` (INT)
+
+### 2. Configuración del Proyecto Unity
+1. Importar los scripts proporcionados (`EnemyCombat.cs`, `EnemyHealth.cs`, etc.) en Unity y asignarlos a sus respectivos GameObjects.
+2. Configurar los elementos del menú (Canvas, Buttons) y enlazar sus eventos con los métodos correspondientes.
+3. Configurar los colliders, animaciones y referencias de los scripts en el editor de Unity.
+
+### 3. Integración del Sistema de Gestión de Usuarios
+1. Subir los scripts PHP (`Login.php` y `RegisterUser.php`) a un servidor web con soporte PHP y acceso a la base de datos MySQL.
+2. Configurar las URL en Unity para conectar con los scripts PHP.
+
+### 4. Ejecución
+1. Abrir el proyecto en Unity.
+2. Ejecutar la escena principal en el editor de Unity.
+3. Probar las funcionalidades del menú, como iniciar sesión, registrarse y acceder al juego.
+4. Iniciar el juego y experimentar las mecánicas de combate, movimiento y gestión de salud.
+
+### 5. Verificación
+1. Confirmar que el sistema de registro e inicio de sesión funcione correctamente y registre los datos en la base de datos.
+2. Verificar que las interacciones del jugador y los enemigos funcionen como se espera.
+```
