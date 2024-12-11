@@ -53,7 +53,8 @@
 | 4  | Huamani Vasquez Juan Jose | 9a02763 | JuanHuamaniVasquez | 100% |
 | 5  | Delgado Chipana Piero Adrian | a6e6e07 | Vsrn12  | 100% |
 | 6  | Zela Flores Gabriel Frank  | 61501b4 | GabrielZelaFlores | 100% |
-
+| 7  | Valdivia Vasquez Gian Pool  | ....... | PoolValdivia | 100% |
+| 8  | Yabar Carazas Melvin Jarred  | ....... | MelvinYabar | 100% |
 
 ---
 # Linuxerzzz Game
