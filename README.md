@@ -277,6 +277,46 @@ public void DealDamage()
 3. **Scripts de Gameplay**:
    - Integrar los scripts mencionados en sus respectivos GameObjects.
    - Configurar animaciones, colliders y referencias en Unity.
+  
+## Scripts y Código
+
+1. **Patrón Singleton**:
+   - **Uso**: Implementado en el sistema de gestión de usuarios en los scripts PHP (`Login.php` y `RegisterUser.php`).
+   - **Propósito**: 
+     - Garantizar que haya una única instancia de conexión a la base de datos.
+     - Mejorar el rendimiento evitando múltiples conexiones simultáneas.
+     - Simplificar el acceso a la conexión mediante un único punto de entrada.
+   - **Ejemplo**:
+     ```php
+     class Database {
+         private static $instance = null;
+         private $conn;
+         private function __construct() {
+             $this->conn = new mysqli("localhost", "root", "root", "unityjuegosesiones");
+         }
+         public static function getInstance() {
+             if (self::$instance === null) {
+                 self::$instance = new Database();
+             }
+             return self::$instance;
+         }
+         public function getConnection() {
+             return $this->conn;
+         }
+     }
+     ```
+
+2. **Prácticas de Modularidad y Reutilización**:
+   - Los scripts de Unity, como `EnemyCombat.cs`, `PlayerCombat.cs`, y `EnemyMovement.cs`, están divididos en clases y métodos específicos que separan responsabilidades.
+   - **Beneficio**:
+     - Facilita la lectura y mantenimiento del código.
+     - Permite reutilizar componentes para futuros desarrollos.
+
+3. **Separación de Lógica**:
+   - La lógica de backend (PHP) y frontend (Unity) están claramente separadas.
+   - **Beneficio**: 
+     - Mejora la seguridad al mantener la lógica del lado del servidor oculta.
+     - Hace que las responsabilidades de cada componente sean independientes.
 
 ## Ejecución del Juego
 
