@@ -1,4 +1,61 @@
+<div align="center">
+<table>
+    <theader>
+        <tr>
+            <td style="width:25%;"><img src="./imagenes/LogoUniversidad.png" alt="EPIS" style="width:80%; height:auto"/></td>
+            <td>
+                <span style="font-weight:bold;">UNIVERSIDAD LA SALLE</span><br />
+                <span style="font-weight:bold;">ESCUELA PROFESIONAL DE INGENIERÍA DE SOFTWARE</span>
+            </td>            
+        </tr>
+    </theader>
+    <tbody>
+        <tr>
+        <td colspan="2"><span style="font-weight:bold;">Proyecto</span>: Linuxerzzz Game</td>
+        </tr>
+        <tr>
+        <td colspan="2"><span style="font-weight:bold;">Fecha</span>:  2024/11/10</td>
+        </tr>
+    </tbody>
+</table>
+</div>
 
+<div align="center">
+<span style="font-weight:bold;">PROYECTO</span><br />
+</div>
+
+<table>
+<theader>
+<tr><th>INFORMACIÓN BÁSICA</th></tr>
+</theader>
+<tbody>
+    <tr>
+        <td>ASIGNATURA:</td><td>Lenguaje de Programación III</td>
+    </tr>
+    <tr>
+        <td>SEMESTRE:</td><td>III</td>
+    </tr>
+    <tr>
+        <td colspan="3">DOCENTE:
+        <ul>
+        <li>Richart Smith Escobedo Quispe - rescobedoq@unsa.edu.pe</li>
+        </ul>
+        </td>
+    </tr>
+</tbody>
+</table>
+
+| Nro. | Nombre | Code | User | Porcentaje de Participación |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| 1  | Castro Mamani Sebastian Adriano  | f70a0db  | SebastianCastro-ULS | 100% |
+| 2  | Arapa Chua Davis  | 265b390 | LenzG-alt  | 100% |
+| 3  | Romero Ramirez Joel  | 5f147fe | B3NJ1RO  | 100% |
+| 4  | Huamani Vasquez Juan Jose | 9a02763 | JuanHuamaniVasquez | 100% |
+| 5  | Delgado Chipana Piero Adrian | a6e6e07 | Vsrn12  | 100% |
+| 6  | Zela Flores Gabriel Frank  | 61501b4 | GabrielZelaFlores | 100% |
+
+
+---
 # Linuxerzzz Game
 
 ## Introducción
@@ -249,4 +306,3 @@ public void DealDamage()
 ### 5. Verificación
 1. Confirmar que el sistema de registro e inicio de sesión funcione correctamente y registre los datos en la base de datos.
 2. Verificar que las interacciones del jugador y los enemigos funcionen como se espera.
-```
