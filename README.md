@@ -1,271 +1,222 @@
-# Proyecto: Sistema de Lista de Reproducción de Canciones en C++ 🎵
 
-## Integrantes del Proyecto
+# Linuxerzzz Game
 
-- Huamaní Vásquez Juan José
-- Valdivia Vásquez Gian Pool
-- Zela Flores Gabriel Frank
+## Introducción
 
----
-
-## **Abstract**
-En este proyecto se implementó un sistema que permite gestionar canciones de forma eficiente, utilizando estructuras de datos avanzadas como Árbol AVL, Tabla Hash y Lista Doblemente Enlazada. Estas herramientas facilitan la búsqueda, organización y manipulación de canciones de manera óptima. También nos enfocamos en crear una interfaz gráfica interactiva con **ImGui** que hace que interactuar con el sistema sea más sencillo y agradable para los usuarios. En comparación con versiones anteriores, este sistema incluye importantes mejoras y nuevas funciones fruto del aprendizaje y colaboración de nuestro equipo.
+El proyecto **Linuxerzzz Game** combina el diseño de un sistema de gestión de usuarios mediante PHP y un sistema visual interactivo en Unity para juegos. Este proyecto busca integrar funcionalidades de backend para autenticar usuarios y proporcionar un menú dinámico y funcional en Unity, desarrollado con herramientas como **Canvas**, **Button**, y **EventSystem**.
 
 ---
 
-## **1. Introduction**
+## Descripción General
 
-### **1.1 Contexto y Motivación**
-A lo largo de este proyecto, nos dimos cuenta de lo desafiante que puede ser manejar una gran cantidad de canciones en sistemas de música, como aplicaciones de streaming o listas de reproducción personales. En versiones previas de este sistema, trabajábamos únicamente con listas doblemente enlazadas, lo cual era funcional, pero no suficiente para manejar eficientemente listas grandes de canciones. Esto se traducía en problemas como:
-1. Búsquedas lentas al no tener las canciones ordenadas.
-2. Dificultades para gestionar datos masivos.
-3. La ausencia de una interfaz gráfica que complicaba su uso, especialmente para personas no técnicas.
+1. **Interfaz Gráfica (Unity)**:
+   - Diseño de un menú principal que incluye opciones como iniciar el juego, configuraciones y salir.
+   - Implementación de elementos visuales estilizados para la experiencia del usuario.
 
-Estos desafíos se tomaron como una oportunidad para mejorar, incorporando nuevas herramientas y técnicas que hicieran el sistema más eficiente y fácil de usar.
+2. **Backend de Gestión de Usuarios (PHP)**:
+   - Registro e inicio de sesión con validación y control de credenciales.
+   - Uso del patrón Singleton para manejar conexiones eficientes a la base de datos.
 
-### **1.2 Objetivo**
-El objetivo principal fue rediseñar el sistema para superar estas limitaciones. Queríamos:
-1. Utilizar estructuras avanzadas como el Árbol AVL y la Tabla Hash para hacer que las búsquedas y otras operaciones fueran más rápidas y precisas.
-2. Crear una interfaz gráfica que permitiera a los usuarios interactuar de manera visual y sencilla con el sistema.
-3. Optimizar las operaciones básicas (CRUD) para hacerlas rápidas y efectivas, incluso con grandes cantidades de datos.
+3. **Sistema de Comportamiento en el Juego**:
+   - Implementación de scripts para el combate, salud y movimiento del jugador y los enemigos.
+   - Gestión de interacciones dinámicas, como knockback, stun y estados de movimiento.
 
 ---
 
-## **2. Metodología**
+## Detalles Técnicos
 
-### **2.1 Arquitectura del Sistema**
-Para lograr nuestros objetivos, combinamos tres estructuras de datos que se complementan entre sí:
-- **AVL Tree**: Es ideal para realizar búsquedas ordenadas, como por el nombre de las canciones.
-- **Hash Table**: Facilita búsquedas rápidas a través de un identificador único (`trackId`).
-- **Doubly Linked List**: Permite una manipulación más flexible y facilita la visualización de las canciones.
+### Estructura del Sistema
 
-Además, utilizamos **ImGui** para implementar una interfaz gráfica que hiciera que el sistema fuera más accesible y amigable para los usuarios.
+El sistema tiene tres componentes principales:
+- **Frontend en Unity**: La interfaz gráfica que se ejecuta como parte del juego.
+- **Backend en PHP**: Scripts que interactúan con una base de datos MySQL para gestionar usuarios.
+- **Gameplay en Unity**: Código para la lógica de combate, movimiento y comportamiento.
 
 ---
 
-### **2.2 Implementación de Funcionalidades**
+## Componentes del Proyecto
 
-#### **Agregar Canción**
-Esta función añade una canción a todas las estructuras del sistema (Árbol AVL, Tabla Hash y Lista Doblemente Enlazada), asegurando que esté disponible para todas las funcionalidades.
+### Interfaz Gráfica en Unity
 
-```cpp
-void addSongGlobal(const Song& song, AVLTree& avlTree, HashTable& hashTable, DoublyLinkedList& list) {
-    avlTree.insert(song);
-    hashTable.insert(song);
-    list.addSong(song);
-    cout << "Canción añadida exitosamente: " << song.getTrackName() << "\n";
-}
+#### Configuración del Menú
+
+El archivo YAML describe la estructura del menú principal:
+
+```yaml
+GameObject:
+  m_Name: Canvas
+  m_Component:
+    - RectTransform:
+        m_LocalPosition: {x: 0, y: 0, z: 0}
+    - CanvasRenderer:
+        m_CullTransparentMesh: 1
+    - Button:
+        m_Name: JUGAR
+        m_OnClick:
+          m_MethodName: PlayGame
 ```
 
-#### **Eliminar Canción**
-Aquí implementamos un método para eliminar una canción de todas las estructuras. Esta función verifica primero si la canción existe y luego la borra de las estructuras asociadas.
+#### Diseño Visual
 
-```cpp
-void deleteSongGlobal(const std::string& trackId, AVLTree& avlTree, HashTable& hashTable, DoublyLinkedList& list) {
-    int year;
-    if (list.removeSong(trackId, year)) {
-        hashTable.remove(year, trackId);
-        avlTree.remove(trackId);
-        cout << "Canción eliminada de todas las estructuras.\n";
-    } else {
-        cout << "Canción no encontrada.\n";
-    }
-}
+```yaml
+RenderSettings:
+  m_Fog: 0
+  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientIntensity: 1
 ```
 
-#### **Ordenar Canciones**
-Con este método, los usuarios pueden ordenar las canciones según diferentes criterios, como la popularidad, de forma ascendente o descendente.
+#### Assets
 
-```cpp
-void sortSongs(DoublyLinkedList& list, const std::string& criteria, bool ascending) {
-    vector<Song> songs = list.toVector();
-    if (criteria == "popularidad") {
-        sort(songs.begin(), songs.end(), [&](const Song& a, const Song& b) {
-            return ascending ? a.getPopularity() < b.getPopularity() : a.getPopularity() > b.getPopularity();
-        });
-    }
-    // Otros criterios...
-}
-```
+1. **OcclusionCullingSettings (29 &1)**:
+   ```yaml
+   OcclusionCullingSettings:
+     m_OcclusionBakeSettings:
+       smallestOccluder: 5
+       smallestHole: 0.25
+   ```
 
-#### **Buscar Canción**
-Esta función permite encontrar canciones por año de lanzamiento utilizando la Tabla Hash para agilizar el proceso.
+2. **LightmapSettings (157 &3)**:
+   ```yaml
+   LightmapSettings:
+     m_BakeResolution: 40
+     m_TextureCompression: 1
+   ```
 
-```cpp
-void displaySongsByYear(HashTable& hashTable, int year) {
-    list<Song> songs = hashTable.find(year);
-
-    if (songs.empty()) {
-        cout << "No se encontraron canciones para el año " << year << ".\n";
-        return;
-    }
-
-    for (const auto& song : songs) {
-        cout << song.getTrackName() << " - " << song.getArtistName()
-                  << " (Popularidad: " << song.getPopularity() << ", Duración: " << song.getDuration() << " ms)\n";
-    }
-}
-```
+3. **GameObject (1 &495978345)**:
+   ```yaml
+   GameObject:
+     m_Name: Button
+     m_Component:
+       - RectTransform:
+           m_LocalPosition: {x: 0, y: 0, z: 0}
+       - Button:
+           m_Name: JUGAR
+           m_OnClick:
+             m_MethodName: PlayGame
+   ```
 
 ---
 
-### **2.3 Interfaz Gráfica**
-#### **Características**
-Se desarrollo una interfaz que permite al usuario realizar acciones como:
-- Gestionar varias listas de reproducción.
-- Añadir, eliminar y modificar canciones visualmente.
-- Ordenar canciones según criterios como popularidad o duración.
-- Reproducir canciones de forma aleatoria y visualizar listas personalizadas.
+### Sistema de Gestión de Usuarios
 
-```cpp
-void menuImGui(DoublyLinkedList& list, HashTable& hashTable, AVLTree& avlTree) {
-    if (ImGui::Begin("Gestión de Canciones")) {
-        const auto& songs = list.toVector();
-        if (songs.empty()) {
-            ImGui::Text("No hay canciones en la lista.");
-        } else {
-            ImGui::Text("Lista de canciones:");
-            for (const auto& song : songs) {
-                ImGui::Text("%s - %s (Duración: %d ms)", 
-                            song.getTrackName().c_str(),
-                            song.getArtistName().c_str(),
-                            song.getDuration());
-            }
+#### Login.php
+
+```php
+<?php
+class Database {
+    private static $instance = null;
+    private $conn;
+    private function __construct() {
+        $this->conn = new mysqli("localhost", "root", "root", "unityjuegosesiones");
+    }
+    public static function getInstance() {
+        if (self::$instance === null) {
+            self::$instance = new Database();
         }
+        return self::$instance;
     }
-    ImGui::End();
+    public function getConnection() {
+        return $this->conn;
+    }
+}
+$loginUser = $_POST["loginUser"];
+$loginPass = $_POST["loginPass"];
+$db = Database::getInstance();
+$conn = $db->getConnection();
+$sql = "SELECT password FROM users WHERE username = '$loginUser'";
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    echo $row["password"] == $loginPass ? "Inicio de Sesión correcto." : "Credenciales Incorrectas.";
+} else {
+    echo "Usuario no existe.";
+}
+?>
+```
+
+#### RegisterUser.php
+
+```php
+<?php
+$loginUser = $_POST["loginUser"];
+$loginPass = $_POST["loginPass"];
+$db = Database::getInstance();
+$conn = $db->getConnection();
+$sql = "SELECT username FROM users WHERE username = '$loginUser'";
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+    echo "Nombre de usuario ya existe.";
+} else {
+    $sql2 = "INSERT INTO users (username, password, level) VALUES ('$loginUser', '$loginPass', 1)";
+    echo $conn->query($sql2) ? "Usuario registrado con éxito." : "Error: " . $conn->error;
+}
+?>
+```
+
+---
+
+### Scripts de Comportamiento en el Juego
+
+1. **EnemyCombat.cs**: Maneja el ataque de los enemigos. Incluye knockback y daño al jugador.
+2. **EnemyHealth.cs**: Controla la salud del enemigo y reacciones como la muerte.
+3. **EnemyKnockback.cs**: Implementa el efecto de retroceso y aturdimiento en los enemigos.
+4. **EnemyMovement.cs**: Define los movimientos básicos y los estados del enemigo.
+5. **PlayerCombat.cs**: Permite al jugador atacar y gestionar el daño infligido a los enemigos.
+6. **PlayerHealth.cs**: Maneja la salud del jugador y la transición a la pantalla de "Game Over".
+7. **PlayerMovement.cs**: Controla los movimientos del jugador y la respuesta a interacciones como knockback.
+
+#### Ejemplo de Knockback (EnemyKnockback.cs)
+
+```csharp
+public void Knockback(Transform playerTransform, float knockbackForce, float knockbackTime, float stunTime)
+{
+    enemyMovement.ChangeState(EnemyState.Knockback);
+    StartCoroutine(StunTimer(knockbackTime, stunTime));
+    Vector2 direction = (transform.position - playerTransform.position).normalized;
+    rb.linearVelocity = direction * knockbackForce;
+}
+```
+
+#### Estados del Enemigo (EnemyMovement.cs)
+
+```csharp
+public enum EnemyState
+{
+    Idle,
+    Chasing,
+    Attacking,
+    Knockback
+}
+```
+
+#### Interacción del Jugador (PlayerCombat.cs)
+
+```csharp
+public void DealDamage()
+{
+    Collider2D[] enemies = Physics2D.OverlapCircleAll(attackPoint.position, weaponRange, enemyLayer);
+    if (enemies.Length > 0)
+    {
+        enemies[0].GetComponent<EnemyHealth>().ChangeHealth(-damage);
+        enemies[0].GetComponent<EnemyKnockback>().Knockback(transform, knockbackForce, knockbackTime, stunTime);
+    }
 }
 ```
 
 ---
 
-## **2.4 Justificación Técnica**
+## Implementación y Configuración
 
-Cada estructura fue seleccionada con base en sus ventajas específicas y en cómo complementan las necesidades del sistema.
+### Configuración del Proyecto
 
-### **AVL Tree**
-- **Por qué lo usamos**: Permite búsquedas rápidas y ordenadas.
-- **Ventajas**:
-  - Mantiene un balance automático.
-  - Es eficiente para manejar datos grandes con una complejidad O(log n).
+1. **Base de Datos**:
+   - Crear una base de datos llamada `unityjuegosesiones`.
+   - Crear una tabla `users` con columnas: `id`, `username`, `password`, y `level`.
 
-### **Hash Table**
-- **Por qué lo usamos**: Facilita accesos rápidos por identificador único (`trackId`).
-- **Ventajas**:
-  - Acceso promedio en tiempo constante O(1).
-  - Manejo de colisiones mediante listas enlazadas.
+2. **Unity**:
+   - Diseñar el menú en Unity, utilizando `Canvas` y `Buttons`.
+   - Configurar los eventos de los botones para conectar con PHP.
 
-### **Doubly Linked List**
-- **Por qué lo usamos**: Es ideal para la manipulación dinámica de canciones.
-- **Ventajas**:
-  - Permite insertar y eliminar canciones en cualquier posición con facilidad.
-  - Facilita la navegación en ambas direcciones.
-
----
-
-## **3. Resultados**
-
-### **3.1 Comparativa con Informes Anteriores**
-En esta tabla mostramos cómo nuestro trabajo ha mejorado el sistema en comparación con las versiones previas:
-
-| **Característica**              | **Versión 1**         | **Versión 2**                   | **Actual**                  |
-|----------------------------------|-----------------------|----------------------------------|-----------------------------|
-| Estructuras de Datos             | Lista Doblemente Enlazada | + AVL Tree                     | + Tabla Hash y AVL Tree     |
-| Búsqueda                         | Lineal (O(n))         | Logarítmica (O(log n))          | Constante (O(1), promedio)  |
-| Interfaz                         | No incluida           | No incluida                    | Gráfica interactiva (ImGui) |
-
-### **3.2 Rendimiento**
-El uso de estructuras avanzadas mejoró significativamente los tiempos de operación. Por ejemplo, buscar canciones por `trackId` ahora toma solo 2 ms, en lugar de los 20 ms de la versión inicial.
-
----
-
-### **3.3 Impacto de la Interfaz Gráfica**
-Se creo una interfaz que no solo fuera funcional, sino también intuitiva para los usuarios. Los resultados fueron muy positivos: incluso personas sin experiencia técnica calificaron la experiencia con un promedio de **8.7/10** en términos de usabilidad y diseño. Esto demuestra que logramos crear un sistema accesible y fácil de usar.
-
-| **Función**                | **Descripción**                                      | **Tiempo Promedio (seg)** |
-|----------------------------|----------------------------------------------------|---------------------------|
-| Agregar Canción            | Entrada manual mediante la interfaz gráfica         | 3.2                       |
-| Buscar por Nombre          | Búsqueda mediante campo de texto en la interfaz     | 2.1                       |
-| Cambiar Orden de Canciones | Reorganización visual en la lista                   | 1.5                       |
-
-Estas métricas reflejan que la interfaz no solo mejora la experiencia visual, sino que también optimiza el tiempo que los usuarios tardan en realizar tareas comunes.
-
----
-
-## **3.4 Métricas de Evaluación Más Detalladas**
-
-Para validar la eficiencia del sistema, realizamos pruebas con diferentes volúmenes de datos. Esto nos permitió analizar su desempeño bajo distintos escenarios y asegurarnos de que fuera escalable.
-
-### **Escenarios de Prueba**
-- **Pequeña lista**: 100 canciones.
-- **Lista mediana**: 10,000 canciones.
-- **Lista grande**: 1,000,000 canciones.
-
-| **Operación**       | **Volumen Pequeño (ms)** | **Volumen Mediano (ms)** | **Volumen Grande (ms)** |
-|---------------------|--------------------------|--------------------------|--------------------------|
-| Agregar Canción     | 1.5                      | 2.3                      | 7.2                      |
-| Buscar por ID       | 0.5                      | 0.6                      | 0.8                      |
-| Buscar por Nombre   | 1.1                      | 2.4                      | 5.5                      |
-| Ordenar por Año     | 3.5                      | 9.2                      | 25.7                     |
-| Eliminar Canción    | 1.8                      | 2.8                      | 8.5                      |
-
-### **Análisis de Escalabilidad**
-Gracias al uso combinado del Árbol AVL, la Tabla Hash y la Lista Doblemente Enlazada, el sistema mostró un rendimiento sólido incluso con volúmenes grandes de datos. Aquí explicamos cómo estas estructuras contribuyen al desempeño:
-1. **AVL Tree**: Permite búsquedas ordenadas de manera eficiente, manteniendo un tiempo logarítmico (O(log n)) incluso con grandes listas.
-2. **Hash Table**: Proporciona acceso instantáneo promedio (O(1)) para búsquedas rápidas por identificador único.
-3. **Doubly Linked List**: Aunque es menos eficiente para búsquedas, sigue siendo ideal para gestionar y visualizar listas de canciones de forma dinámica.
-
----
-
-## **3.5 Profundización en la Comparativa de Versiones**
-
-A lo largo del proyecto, hemos trabajado en resolver los problemas que identificamos en versiones anteriores. Aquí detallamos cómo hemos superado esas limitaciones.
-
-### **Limitaciones de la Versión 1**
-- **Estructura básica**: Solo utilizaba una Lista Doblemente Enlazada, lo que resultaba en búsquedas lineales (O(n)), poco eficientes para listas grandes.
-- **Falta de ordenación**: No había una manera efectiva de organizar las canciones.
-- **Sin interfaz gráfica**: La interacción se realizaba exclusivamente mediante la línea de comandos, lo cual era un obstáculo para usuarios no técnicos.
-- **Carga de datos manual**: Las canciones debían ingresarse una por una desde el programa principal.
-
-### **Limitaciones de la Versión 2**
-- **Integración incompleta**: Aunque se añadió el AVL Tree, todavía faltaba una estructura complementaria como la Tabla Hash para búsquedas más rápidas.
-- **Búsquedas limitadas**: Solo se podían realizar búsquedas ordenadas, lo que no era suficiente para todos los casos de uso.
-- **Automatización parcial**: Aunque hubo mejoras, todavía no se implementaba una carga automatizada de datos desde fuentes externas como archivos CSV.
-
-### **Mejoras en la Versión Actual**
-Nuestro equipo trabajó arduamente para superar las limitaciones de las versiones anteriores, y los resultados se reflejan en estas mejoras:
-
-| **Aspecto**             | **Versión 1**                      | **Versión 2**               | **Versión Actual**                     |
-|--------------------------|------------------------------------|-----------------------------|----------------------------------------|
-| **Estructuras de Datos** | Lista Doblemente Enlazada         | + AVL Tree                 | + AVL Tree + Hash Table               |
-| **Búsqueda**             | O(n)                             | O(log n)                   | O(log n) + O(1) (Hash Table, AVL)     |
-| **Carga de Datos**       | Manual                           | Parcialmente Automatizada  | Automatizada desde CSV                |
-| **Interfaz**             | No Incluida                      | No Incluida                | Interfaz Gráfica con ImGui            |
-| **Rendimiento Global**   | Lento en listas grandes           | Mejor, pero limitado       | Escalable hasta 1 millón de canciones |
-
-### **Impacto de las Mejoras**
-1. **Incremento en la Eficiencia**: 
-   - Operaciones como buscar canciones por `trackId` ahora toman O(1) en promedio, lo que significa un acceso prácticamente instantáneo incluso con grandes volúmenes de datos.
-2. **Mayor Usabilidad**: 
-   - La incorporación de una interfaz gráfica hace que el sistema sea accesible para todo tipo de usuarios, independientemente de su experiencia técnica.
-3. **Automatización Completa**: 
-   - Ahora es posible cargar grandes volúmenes de canciones automáticamente desde archivos CSV, lo que ahorra tiempo y esfuerzo a los usuarios.
-
----
-## **4. Conclusiones y Trabajo Futuro**
-
-### **4.1 Conclusiones**
-Nuestro equipo logró transformar un sistema básico en uno mucho más robusto, eficiente y amigable. Ahora el sistema no solo maneja grandes volúmenes de datos, sino que lo hace de manera ordenada y rápida.
-
-### **4.2 Trabajo Futuro**
-1. Mejorar el diseño visual de la interfaz gráfica.
-2. Añadir opciones avanzadas como bucles y mezcla de canciones.
-3. Implementar nuevas estructuras de datos como árboles B+ para un mejor rendimiento en bases de datos extensas.
-
----
-
-## **5. Referencias**
-1. "Introduction to Algorithms" - Cormen et al.
-2. Documentación oficial de ImGui.
-3. Documentación oficial de la API de Spotify.
-```
+3. **Scripts de Gameplay**:
+   - Integrar los scripts mencionados en sus respectivos GameObjects.
+   - Configurar animaciones, colliders y referencias en Unity.
